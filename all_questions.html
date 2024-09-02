@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 풀이 - HunterQuiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options label {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>문제 풀이</h1>
+    <div id="question-container"></div>
+</div>
+
+<script>
+    // JSON 파일에서 데이터 가져오기
+    fetch('questions.json')
+        .then(response => response.json())
+        .then(data => {
+            const questionContainer = document.getElementById('question-container');
+
+            data.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `
+                    <h2>문제 ${index + 1}: ${q.question}</h2>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <label><input type="radio" name="question${q.id}" value="${i}"> ${option}</label>
+                        `).join('')}
+                    </div>
+                `;
+                questionContainer.appendChild(questionDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching the question data:', error));
+</script>
+
+</body>
+</html>
