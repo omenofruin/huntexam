@@ -42,9 +42,17 @@
 </div>
 
 <script>
+    // JSON 파일 경로
+    const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
+
     // JSON 파일에서 데이터 가져오기
-    fetch('huntexam/questions.json')
-        .then(response => response.json())
+    fetch(jsonUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             const questionContainer = document.getElementById('question-container');
 
