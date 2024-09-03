@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문제 풀이 - HunterQuiz</title>
+    <title>huntexam - 수렵면허 모의고사</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,6 +24,7 @@
             font-size: 2em;
             margin-bottom: 20px;
             color: #333;
+            text-align: center;
         }
         .question {
             margin: 20px 0;
@@ -32,20 +33,28 @@
             display: block;
             margin: 10px 0;
         }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>문제 풀이</h1>
+    <h1>huntexam - 수렵면허 모의고사</h1>
     <div id="question-container"></div>
 </div>
 
 <script>
-    // JSON 파일 경로
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
 
-    // JSON 파일에서 데이터 가져오기
     fetch(jsonUrl)
         .then(response => {
             if (!response.ok) {
@@ -63,14 +72,35 @@
                     <h2>문제 ${index + 1}: ${q.question}</h2>
                     <div class="options">
                         ${q.options.map((option, i) => `
-                            <label><input type="radio" name="question${q.id}" value="${i}"> ${option}</label>
+                            <label>
+                                <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
+                                ${option}
+                            </label>
                         `).join('')}
                     </div>
+                    <div id="result${index}" class="result"></div>
                 `;
                 questionContainer.appendChild(questionDiv);
             });
         })
         .catch(error => console.error('Error fetching the question data:', error));
+
+    function checkAnswer(questionIndex, selectedOption) {
+        const resultDiv = document.getElementById(`result${questionIndex}`);
+
+        fetch(jsonUrl)
+            .then(response => response.json())
+            .then(data => {
+                const correctAnswer = data[questionIndex].correctAnswer;
+                if (selectedOption === correctAnswer) {
+                    resultDiv.textContent = "정답입니다!";
+                    resultDiv.className = "result correct";
+                } else {
+                    resultDiv.textContent = `오답입니다. 정답은: ${data[questionIndex].options[correctAnswer]}`;
+                    resultDiv.className = "result incorrect";
+                }
+            });
+    }
 </script>
 
 </body>
