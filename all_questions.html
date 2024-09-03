@@ -43,6 +43,23 @@
         .incorrect {
             color: red;
         }
+        /* Fixed button style */
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .fixed-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +68,9 @@
     <h1>huntexam - 수렵면허 모의고사</h1>
     <div id="question-container"></div>
 </div>
+
+<!-- Fixed popup button -->
+<button class="fixed-button" onclick="resetPage()">초기화</button>
 
 <script>
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
@@ -96,10 +116,14 @@
                     resultDiv.textContent = "정답입니다!";
                     resultDiv.className = "result correct";
                 } else {
-                    resultDiv.textContent = `오답입니다. 다시 한번 생각해보세요.`;
+                    resultDiv.textContent = `오답입니다.`;
                     resultDiv.className = "result incorrect";
                 }
             });
+    }
+
+    function resetPage() {
+        location.reload();  // 페이지를 새로 고침합니다.
     }
 </script>
 
