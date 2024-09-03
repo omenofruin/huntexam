@@ -1,8 +1,13 @@
 [
     {
         "id": 1,
-        "question": "HTML의 약자는 무엇인가요?",
-        "options": ["HyperText Markup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyperlink Text Markup Language"],
+        "question": "「야생생물 보호 및 관리에 관한 법률」에 의한 ‘야생생물’의 정의로 가장 적합한 것을 고르시오.",
+        "options": [
+            "산·들 또는 강 등 자연상태에서 서식하거나 자생(自生)하는 동물, 식물, 균류·지의류(地衣類), 원생생물 및 원핵생물의 종(種)을 말한다.",
+            "사람의 생명이나 재산에 피해를 주는 야생동물로서 환경부령으로 정하는 종(種)을 말한다.",
+            "일정한 장소 또는 시설에서 사육·양식 또는 증식하는 생물을 말한다.",
+            "사람을 위하여 가치가 있거나 실제적 또는 잠재적 용도가 있는 유전자원, 생물체, 생물체의 부분, 개체군 또는 생물의 구성요소를 말한다."
+        ],
         "correctAnswer": 1
     },
     {  
