@@ -94,9 +94,25 @@
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
                 
+                // 과목 1 영역 1
                 if (q.id >= 1 && q.id <= 211) {
                     questionDiv.innerHTML = `
                         <h2>과목 1 영역 1 - 문제 ${index + 1}: ${q.question}</h2>
+                        <div class="options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
+                                    ${option}
+                                </label>
+                            `).join('')}
+                        </div>
+                        <div id="result${index}" class="result"></div>
+                    `;
+                }
+                // 과목 1 영역 2
+                else if (q.id >= 212 && q.id <= 415) {
+                    questionDiv.innerHTML = `
+                        <h2>과목 1 영역 2 - 문제 ${index + 1}: ${q.question}</h2>
                         <div class="options">
                             ${q.options.map((option, i) => `
                                 <label>
