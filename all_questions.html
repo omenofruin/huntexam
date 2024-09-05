@@ -76,7 +76,9 @@
 
 <script>
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
+    let allQuestions = []; // 데이터를 전역 변수에 저장
 
+    // 데이터 fetch 및 로드
     fetch(jsonUrl)
         .then(response => {
             if (!response.ok) {
@@ -85,13 +87,13 @@
             return response.json();
         })
         .then(data => {
+            allQuestions = data;  // 데이터를 전역 변수에 저장
             const questionContainer = document.getElementById('question-container');
 
             data.forEach((q, index) => {
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
                 
-                // Check if the question ID is between 1 and 211
                 if (q.id >= 1 && q.id <= 211) {
                     questionDiv.innerHTML = `
                         <h2>과목 1 영역 1 - 문제 ${index + 1}: ${q.question}</h2>
@@ -121,3 +123,28 @@
                 }
                 questionContainer.appendChild(questionDiv);
             });
+        })
+        .catch(error => console.error('Error fetching the question data:', error));
+
+    // 정답 확인 함수
+    function checkAnswer(questionIndex, selectedOption) {
+        const resultDiv = document.getElementById(`result${questionIndex}`);
+        const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 미리 로드된 데이터에서 정답 확인
+
+        if (selectedOption === correctAnswer) {
+            resultDiv.textContent = "정답입니다!";
+            resultDiv.className = "result correct";
+        } else {
+            resultDiv.textContent = `오답입니다.`;
+            resultDiv.className = "result incorrect";
+        }
+    }
+
+    // 페이지 초기화 함수
+    function resetPage() {
+        location.reload();  // 페이지를 새로 고침합니다.
+    }
+</script>
+
+</body>
+</html>
