@@ -90,44 +90,34 @@
             data.forEach((q, index) => {
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
-                questionDiv.innerHTML = `
-                    <h2>문제 ${index + 1}: ${q.question}</h2>
-                    <div class="options">
-                        ${q.options.map((option, i) => `
-                            <label>
-                                <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
-                                ${option}
-                            </label>
-                        `).join('')}
-                    </div>
-                    <div id="result${index}" class="result"></div>
-                `;
+                
+                // Check if the question ID is between 1 and 211
+                if (q.id >= 1 && q.id <= 211) {
+                    questionDiv.innerHTML = `
+                        <h2>과목 1 영역 1 - 문제 ${index + 1}: ${q.question}</h2>
+                        <div class="options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
+                                    ${option}
+                                </label>
+                            `).join('')}
+                        </div>
+                        <div id="result${index}" class="result"></div>
+                    `;
+                } else {
+                    questionDiv.innerHTML = `
+                        <h2>문제 ${index + 1}: ${q.question}</h2>
+                        <div class="options">
+                            ${q.options.map((option, i) => `
+                                <label>
+                                    <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
+                                    ${option}
+                                </label>
+                            `).join('')}
+                        </div>
+                        <div id="result${index}" class="result"></div>
+                    `;
+                }
                 questionContainer.appendChild(questionDiv);
             });
-        })
-        .catch(error => console.error('Error fetching the question data:', error));
-
-    function checkAnswer(questionIndex, selectedOption) {
-        const resultDiv = document.getElementById(`result${questionIndex}`);
-
-        fetch(jsonUrl)
-            .then(response => response.json())
-            .then(data => {
-                const correctAnswer = data[questionIndex].correctAnswer;
-                if (selectedOption === correctAnswer) {
-                    resultDiv.textContent = "정답입니다!";
-                    resultDiv.className = "result correct";
-                } else {
-                    resultDiv.textContent = `오답입니다.`;
-                    resultDiv.className = "result incorrect";
-                }
-            });
-    }
-
-    function resetPage() {
-        location.reload();  // 페이지를 새로 고침합니다.
-    }
-</script>
-
-</body>
-</html>
