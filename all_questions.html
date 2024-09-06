@@ -60,10 +60,17 @@
         .fixed-button:hover {
             background-color: #45a049;
         }
-        img {
+        /* 이미지 컨테이너를 중앙 정렬 */
+        .image-container {
+            text-align: center;
+            margin: 10px 0;
+        }
+        /* 이미지들이 가로로 나열될 수 있도록 inline-block 적용 */
+        .image-container img {
+            display: inline-block;
             max-width: 100%;
             height: auto;
-            margin: 10px 0;
+            margin: 10px;
         }
     </style>
 </head>
@@ -102,7 +109,8 @@
                 // 이미지가 있으면 출력할 HTML 태그 생성
                 let imageHtml = '';
                 if (q.image) {
-                    imageHtml = `<img src="${q.image}" alt="문제 이미지">`;
+                    const images = Array.isArray(q.image) ? q.image : [q.image];  // 이미지가 배열인지 확인
+                    imageHtml = `<div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
                 }
 
                 questionDiv.innerHTML = `
