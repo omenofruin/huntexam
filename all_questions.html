@@ -99,70 +99,26 @@
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
                 
-                // 과목 1 영역 1
-                if (q.id >= 1 && q.id <= 211) {
-                    questionDiv.innerHTML = `
-                        <h2>과목 1 영역 1 - 문제 ${index + 1}: ${q.question}</h2>
-                        <div class="options">
-                            ${q.options.map((option, i) => `
-                                <label>
-                                    <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
-                                    ${option}
-                                </label>
-                            `).join('')}
-                        </div>
-                        <div id="result${index}" class="result"></div>
-                    `;
+                // 이미지가 있으면 출력할 HTML 태그 생성
+                let imageHtml = '';
+                if (q.image) {
+                    imageHtml = `<img src="${q.image}" alt="문제 이미지">`;
                 }
-                // 과목 1 영역 2
-                else if (q.id >= 212 && q.id <= 422) {
-                    questionDiv.innerHTML = `
-                        <h2>과목 1 영역 2 - 문제 ${index + 1}: ${q.question}</h2>
-                        <div class="options">
-                            ${q.options.map((option, i) => `
-                                <label>
-                                    <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
-                                    ${option}
-                                </label>
-                            `).join('')}
-                        </div>
-                        <div id="result${index}" class="result"></div>
-                    `;
-                }
-                // 과목 1 영역 3 (ID 423 이후)
-                else if (q.id >= 423) {
-                    let imageHtml = '';
-                    if (q.image) {
-                        imageHtml = `<img src="${q.image}" alt="문제 이미지">`;
-                    }
 
-                    questionDiv.innerHTML = `
-                        <h2>과목 1 영역 3 - 문제 ${index + 1}: ${q.question}</h2>
-                        ${imageHtml}
-                        <div class="options">
-                            ${q.options.map((option, i) => `
-                                <label>
-                                    <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
-                                    ${option}
-                                </label>
-                            `).join('')}
-                        </div>
-                        <div id="result${index}" class="result"></div>
-                    `;
-                } else {
-                    questionDiv.innerHTML = `
-                        <h2>문제 ${index + 1}: ${q.question}</h2>
-                        <div class="options">
-                            ${q.options.map((option, i) => `
-                                <label>
-                                    <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
-                                    ${option}
-                                </label>
-                            `).join('')}
-                        </div>
-                        <div id="result${index}" class="result"></div>
-                    `;
-                }
+                questionDiv.innerHTML = `
+                    <h2>문제 ${index + 1}: ${q.question}</h2>
+                    ${imageHtml}
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <label>
+                                <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
+                                ${option}
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div id="result${index}" class="result"></div>
+                `;
+
                 questionContainer.appendChild(questionDiv);
             });
         })
