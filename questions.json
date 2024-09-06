@@ -4974,7 +4974,8 @@
 },
 {
     "id": 451,
-    "question": "도로에 설치된 아래 표지판과 가장 밀접하게 관련된 것을 고르시오. <img src="https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true">",
+    "question": "도로에 설치된 아래 표지판과 가장 밀접하게 관련된 것을 고르시오.",
+    "image": "https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true",
     "options": [
         "환경부장관이 지정한 야생생물 특별보호구역을 나타내는 도로 표지판",
         "시·도지사나 시장·군수·구청장이 지정한 야생동물 보호구역을 나타내는 도로 표지판",
