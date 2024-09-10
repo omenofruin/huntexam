@@ -31,8 +31,15 @@
             margin-top: 30px;
             color: #444;
         }
+        .question-block {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
         .question {
-            margin: 20px 0;
+            margin-bottom: 15px;
         }
         .options label {
             display: block;
@@ -138,6 +145,9 @@
             const questionContainer2 = document.getElementById('question-container2');
 
             data.forEach((q, index) => {
+                const questionBlock = document.createElement('div');
+                questionBlock.className = 'question-block';
+
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
                 
@@ -162,11 +172,13 @@
                     <div id="result${index}" class="result"></div>
                 `;
 
+                questionBlock.appendChild(questionDiv);
+
                 // TEST 과목 1과 TEST 과목 2를 구분하여 각 문제를 추가
                 if (index < 600) {
-                    questionContainer1.appendChild(questionDiv);
+                    questionContainer1.appendChild(questionBlock);
                 } else {
-                    questionContainer2.appendChild(questionDiv);
+                    questionContainer2.appendChild(questionBlock);
                 }
             });
         })
