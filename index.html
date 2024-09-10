@@ -49,11 +49,30 @@
             transition: background-color 0.3s;
         }
         .button-group a:hover {
-            background-color: #333333;
+            background-color: #636363;
         }
         .logo{
             width: 100px;
             height: 100px;
+        }
+                .button-group-2 {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            width: 100%; /* 또는 원하는 너비로 설정 */
+            max-width: 600px;
+        }
+
+        .button-group-2 a {
+            flex: 1;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
         }
     </style>
 </head>
@@ -70,12 +89,13 @@
     </p>
     
     <div class="button-group">
+        <a href="mock-exam.html">실전 모의고사</a>
+        <div class="button-group-2">
+            <a href="http://huntexam.kro.kr/all_questions">모든 문제 풀기</a>
+            <a href="subject-wise.html">과목별 문제풀이</a>
+        </div>
         <a href="https://github.com/omenofruin/huntexam" target="_blank">huntexam github</a>
         <a href="https://local.gosi.go.kr/klid/main/main.do" target="_blank">수렵면허 원서접수</a>
-        <br>
-        <a href="http://huntexam.kro.kr/all_questions">모든 문제 풀기</a>
-        <a href="mock-exam.html">실전 모의고사</a>
-        <a href="subject-wise.html">과목별 문제풀이</a>
     </div>
 </div>
 
