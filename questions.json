@@ -10284,11 +10284,11 @@
     "options": [
         {
             "text": "꿩(암컷)",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant%28female%29.png?raw=true"
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant(female).png?raw=true"
         },
         {
             "text": "꿩(수컷)",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant%28male%29.png?raw=true"
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant(male).png?raw=true"
         },
         {
             "text": "멧비둘기",
@@ -10296,12 +10296,11 @@
         },
         {
             "text": "까마귀",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/crow.png?raw=true"
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/crow.png?raw=true
         }
     ],
     "correctAnswer": 0
-}
-,
+},
 {
     "id": 938,
     "question": "다음 중 수렵 가능한 야생동물은?",
