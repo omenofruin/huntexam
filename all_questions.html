@@ -8,7 +8,7 @@
     
     <style>
         @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-        .font{
+        .font {
             font-family: 'Pretendard-Regular';
         }
         body {
@@ -24,7 +24,7 @@
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             font-size: 2em;
@@ -49,8 +49,14 @@
             margin-bottom: 15px;
         }
         .options label {
-            display: block;
+            display: flex;
+            align-items: center;
             margin: 10px 0;
+        }
+        .options img {
+            max-width: 100px;
+            height: auto;
+            margin-left: 10px;
         }
         .result {
             margin-top: 10px;
@@ -96,18 +102,6 @@
         }
         .scroll-button:hover {
             background-color: #636363;
-        }
-        /* 이미지 컨테이너를 중앙 정렬 */
-        .image-container {
-            text-align: center;
-            margin: 10px 0;
-        }
-        /* 이미지들이 가로로 나열될 수 있도록 inline-block 적용 */
-        .image-container img {
-            display: inline-block;
-            max-width: 100%;
-            height: auto;
-            margin: 10px;
         }
         /* 왼쪽 고정 버튼 */
         .left-fixed-button-container {
@@ -178,7 +172,7 @@
 
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
-                
+
                 // 이미지가 있으면 출력할 HTML 태그 생성
                 let imageHtml = '';
                 if (q.image) {
@@ -192,8 +186,9 @@
                     <div class="options">
                         ${q.options.map((option, i) => `
                             <label>
-                                <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
-                                ${option}
+                                <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})">
+                                ${typeof option === 'object' ? option.text : option}
+                                ${typeof option === 'object' && option.image ? `<img src="${option.image}" alt="선택지 이미지">` : ''}
                             </label>
                         `).join('')}
                     </div>
