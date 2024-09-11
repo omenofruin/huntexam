@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>수렵면허 모의고사 - hunterexam</title>
+    <title>과목별 문제 풀기 - hunterexam</title>
     <link rel="icon" href="https://raw.githubusercontent.com/omenofruin/huntexam/main/image/favicon.ico">
-    
     <style>
         @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-        .font{
-            font-family: 'Pretendard-Regular';
-        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Pretendard-Regular', Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
@@ -32,11 +28,22 @@
             color: #333;
             text-align: center;
         }
-        .section-title {
-            font-size: 1.5em;
-            margin-top: 30px;
-            margin-bottom: 20px; /* 추가된 여백 */
-            color: #444;
+        .button-group {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button-group button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .button-group button:hover {
+            background-color: #636363;
         }
         .question-block {
             margin-bottom: 20px;
@@ -62,104 +69,29 @@
         .incorrect {
             color: red;
         }
-        /* Fixed button style */
-        .fixed-button-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .fixed-button {
-            background-color: #000000;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        .fixed-button:hover {
-            background-color: #636363;
-        }
-        .scroll-button {
-            background-color: #000000;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        .scroll-button:hover {
-            background-color: #636363;
-        }
-        /* 이미지 컨테이너를 중앙 정렬 */
-        .image-container {
-            text-align: center;
-            margin: 10px 0;
-        }
-        /* 이미지들이 가로로 나열될 수 있도록 inline-block 적용 */
-        .image-container img {
-            display: inline-block;
-            max-width: 100%;
-            height: auto;
-            margin: 10px;
-        }
-        /* 왼쪽 고정 버튼 */
-        .left-fixed-button-container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-        }
-        .left-fixed-button {
-            background-color: #000000;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        .left-fixed-button:hover {
-            background-color: #636363;
-        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>수렵면허 모든 문제 풀기</h1>
-    <!-- TEST 과목 1 -->
-    <div class="section-title">과목 1: 수렵에 관한 법령 및 수렵 절차<br></div>
-    <div id="question-container1"></div>
+    <h1>과목별 문제 풀기</h1>
+    <!-- 과목별 문제 선택 버튼 -->
+    <div class="button-group">
+        <button onclick="loadQuestions(1)">과목 1: 수렵에 관한 법령 및 절차</button>
+        <button onclick="loadQuestions(2)">과목 2: 야생동물 보호 관리</button>
+        <button onclick="loadQuestions(3)">과목 3: 관련 법령</button>
+        <!-- 추가 과목 버튼을 원하면 여기에 추가하세요 -->
+    </div>
 
-    <!-- TEST 과목 2 -->
-    <div class="section-title">과목 2: 야생동물의 보호 관리에 관한 사항<br></div>
-    <div id="question-container2"></div>
-</div>
-
-<!-- 왼쪽 고정 버튼 -->
-<div class="left-fixed-button-container">
-    <button class="left-fixed-button" onclick="goBack()">이전 화면</button>
-</div>
-
-<!-- 오른쪽 고정 버튼 -->
-<div class="fixed-button-container">
-    <button class="fixed-button" onclick="resetPage()">초기화</button>
-    <button class="scroll-button" onclick="scrollToTop()">맨 위로</button>
-    <button class="scroll-button" onclick="scrollToBottom()">맨 아래로</button>
+    <!-- 문제를 표시할 영역 -->
+    <div id="question-container"></div>
 </div>
 
 <script>
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
-    let allQuestions = []; // 데이터를 전역 변수에 저장
+    let allQuestions = [];
 
-    // 데이터 fetch 및 로드
+    // JSON 데이터 불러오기
     fetch(jsonUrl)
         .then(response => {
             if (!response.ok) {
@@ -168,54 +100,62 @@
             return response.json();
         })
         .then(data => {
-            allQuestions = data;  // 데이터를 전역 변수에 저장
-            const questionContainer1 = document.getElementById('question-container1');
-            const questionContainer2 = document.getElementById('question-container2');
-
-            data.forEach((q, index) => {
-                const questionBlock = document.createElement('div');
-                questionBlock.className = 'question-block';
-
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-                
-                // 이미지가 있으면 출력할 HTML 태그 생성
-                let imageHtml = '';
-                if (q.image) {
-                    const images = Array.isArray(q.image) ? q.image : [q.image];  // 이미지가 배열인지 확인
-                    imageHtml = `<div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
-                }
-
-                questionDiv.innerHTML = `
-                    <h2>문제 ${index + 1}: ${q.question}</h2>
-                    ${imageHtml}
-                    <div class="options">
-                        ${q.options.map((option, i) => `
-                            <label>
-                                <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
-                                ${option}
-                            </label>
-                        `).join('')}
-                    </div>
-                    <div id="result${index}" class="result"></div>
-                `;
-
-                questionBlock.appendChild(questionDiv);
-
-                // TEST 과목 1과 TEST 과목 2를 구분하여 각 문제를 추가
-                if (index < 600) {
-                    questionContainer1.appendChild(questionBlock);
-                } else {
-                    questionContainer2.appendChild(questionBlock);
-                }
-            });
+            allQuestions = data;  // 모든 문제 데이터를 저장
         })
         .catch(error => console.error('Error fetching the question data:', error));
+
+    // 과목별로 문제를 로드하는 함수
+    function loadQuestions(subjectId) {
+        const questionContainer = document.getElementById('question-container');
+        questionContainer.innerHTML = '';  // 기존 내용을 비우기
+
+        let filteredQuestions = [];
+        if (subjectId === 1) {
+            filteredQuestions = allQuestions.filter(q => q.id >= 1 && q.id <= 211); // 과목 1 문제
+        } else if (subjectId === 2) {
+            filteredQuestions = allQuestions.filter(q => q.id >= 212 && q.id <= 422); // 과목 2 문제
+        } else if (subjectId === 3) {
+            filteredQuestions = allQuestions.filter(q => q.id >= 423); // 과목 3 문제
+        }
+
+        // 선택된 과목의 문제를 표시
+        filteredQuestions.forEach((q, index) => {
+            const questionBlock = document.createElement('div');
+            questionBlock.className = 'question-block';
+
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            
+            // 이미지가 있으면 HTML로 추가
+            let imageHtml = '';
+            if (q.image) {
+                const images = Array.isArray(q.image) ? q.image : [q.image];
+                imageHtml = `<div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
+            }
+
+            questionDiv.innerHTML = `
+                <h2>문제 ${index + 1}: ${q.question}</h2>
+                ${imageHtml}
+                <div class="options">
+                    ${q.options.map((option, i) => `
+                        <label>
+                            <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
+                            ${option}
+                        </label>
+                    `).join('')}
+                </div>
+                <div id="result${index}" class="result"></div>
+            `;
+
+            questionBlock.appendChild(questionDiv);
+            questionContainer.appendChild(questionBlock);
+        });
+    }
 
     // 정답 확인 함수
     function checkAnswer(questionIndex, selectedOption) {
         const resultDiv = document.getElementById(`result${questionIndex}`);
-        const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 미리 로드된 데이터에서 정답 확인
+        const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 정답 확인
 
         if (selectedOption === correctAnswer) {
             resultDiv.textContent = "정답입니다!";
@@ -224,26 +164,6 @@
             resultDiv.textContent = `오답입니다.`;
             resultDiv.className = "result incorrect";
         }
-    }
-
-    // 페이지 초기화 함수
-    function resetPage() {
-        location.reload();  // 페이지를 새로 고침합니다.
-    }
-
-    // 페이지 맨 위로 스크롤하는 함수
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 페이지 맨 아래로 스크롤하는 함수
-    function scrollToBottom() {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-
-    // 이전 화면으로 돌아가는 함수
-    function goBack() {
-        window.history.back();
     }
 </script>
 
