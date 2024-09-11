@@ -69,6 +69,28 @@
         .incorrect {
             color: red;
         }
+        /* 고정 버튼 스타일 */
+        .fixed-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .fixed-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .fixed-button:hover {
+            background-color: #636363;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +107,13 @@
 
     <!-- 문제를 표시할 영역 -->
     <div id="question-container"></div>
+</div>
+
+<!-- 고정된 버튼 (맨 위로, 맨 아래로, 이전 화면) -->
+<div class="fixed-button-container">
+    <button class="fixed-button" onclick="scrollToTop()">맨 위로</button>
+    <button class="fixed-button" onclick="scrollToBottom()">맨 아래로</button>
+    <button class="fixed-button" onclick="goBack()">이전 화면</button>
 </div>
 
 <script>
@@ -115,7 +144,7 @@
         } else if (subjectId === 2) {
             filteredQuestions = allQuestions.filter(q => q.id >= 612 && q.id <= 936); // 과목 2 문제
         } else if (subjectId === 3) {
-            filteredQuestions = allQuestions.filter(q => q.id >= 423); // 과목 3 문제
+            filteredQuestions = allQuestions.filter(q => q.id >= 937); // 과목 3 문제
         }
 
         // 선택된 과목의 문제를 표시
@@ -164,6 +193,21 @@
             resultDiv.textContent = `오답입니다.`;
             resultDiv.className = "result incorrect";
         }
+    }
+
+    // 페이지 맨 위로 스크롤하는 함수
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 페이지 맨 아래로 스크롤하는 함수
+    function scrollToBottom() {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    // 이전 화면으로 돌아가는 함수
+    function goBack() {
+        window.history.back();
     }
 </script>
 
