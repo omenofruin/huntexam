@@ -177,7 +177,7 @@
                 let imageHtml = '';
                 if (q.image) {
                     const images = Array.isArray(q.image) ? q.image : [q.image];  // 이미지가 배열인지 확인
-                    imageHtml = `<br><div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
+                    imageHtml = `<div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
                 }
 
                 questionDiv.innerHTML = `
