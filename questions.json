@@ -10369,6 +10369,52 @@
             }
         ],
         "correctAnswer": 3
+    },
+    {
+        "id": 941,
+        "question": "다음 중 수렵 가능한 야생동물은?",
+        "options": [
+            {
+                "text": "갈까마귀(암컷)",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/daurian%20jakdaw(female).png?raw=true"
+            },
+            {
+                "text": "두루미",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/crane.png?raw=true"
+            },
+            {
+                "text": "매",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/hawk.png?raw=true"
+            },
+            {
+                "text": "저어새(겨울)",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/black-faced%20spoonbill(winter).png?raw=true"
+            }
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": 942,
+        "question": "다음 중 수렵 가능한 야생동물은?",
+        "options": [
+            {
+                "text": "저어새(여름)",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/black-faced%20spoonbill(summer).png?raw=true"
+            },
+            {
+                "text": "갈까마귀(수컷)",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/daurian%20jakdaw(male).png?raw=true"
+            },
+            {
+                "text": "참수리",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/steller's%20sea%20eagle.png?raw=true"
+            },
+            {
+                "text": "청다리도요사촌(겨울)",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/nordmann's%20greenshank(winter).png?raw=true"
+            }
+        ],
+        "correctAnswer": 1
     }
 
 ]
