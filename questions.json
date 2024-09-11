@@ -10293,13 +10293,26 @@
     "id": 938,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
-        "검독수리 <br><img src="https://github.com/omenofruin/huntexam/blob/main/image/pheasant(female).png?raw=true">",
-        "꿩(수컷)",
-        "넓적부리도요",
-        "노랑부리백로(여름)"
+        {
+            "text": "검독수리",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant(female).png?raw=true"
+        },
+        {
+            "text": "꿩(수컷)",
+            "image": null
+        },
+        {
+            "text": "넓적부리도요",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로(여름)",
+            "image": null
+        }
     ],
     "correctAnswer": 1
-},
+}
+,
 {
     "id": 939,
     "question": "다음 중 수렵 가능한 야생동물은?",
