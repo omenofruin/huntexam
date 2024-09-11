@@ -10278,5 +10278,41 @@
         "하늘에서는 V자 모양을 이루고 날며 번식기에 외형으로 암수를 구분하기가 힘들다."
     ],
     "correctAnswer": 3
+},{
+    "id": 937,
+    "question": "다음 중 수렵 불가능한 야생동물은?",
+    "image": ["https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true",
+            "https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true",
+            "https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true"
+    ]
+    "options": [
+        "꿩(암컷)",
+        "꿩(수컷)",
+        "멧비둘기",
+        "까마귀"
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 938,
+    "question": "다음 중 수렵 가능한 야생동물은?",
+    "options": [
+        "검독수리",
+        "꿩(수컷)",
+        "넓적부리도요",
+        "노랑부리백로(여름)"
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 939,
+    "question": "다음 중 수렵 가능한 야생동물은?",
+    "options": [
+        "노랑부리백로(여름)",
+        "넓적부리도요",
+        "멧비둘기",
+        "두루미"
+    ],
+    "correctAnswer": 2
 }
 ]
