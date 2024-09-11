@@ -10347,5 +10347,29 @@
         ],
         "correctAnswer": 2
     }
+},
+    {
+        "id": 940,
+        "question": "다음 중 수렵 가능한 야생동물은?",
+        "options": [
+            {
+                "text": "매",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/hawk.png?raw=true"
+            },
+            {
+                "text": "노랑부리백로(여름)",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/chinese%20egret.png?raw=true"
+            },
+            {
+                "text": "두루미",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/crane.png?raw=true"
+            },
+            {
+                "text": "까마귀",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/crow.png?raw=true"
+            }
+        ],
+        "correctAnswer": 3
+    }
 
 ]
