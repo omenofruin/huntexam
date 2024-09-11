@@ -10324,28 +10324,28 @@
     ],
     "correctAnswer": 1
 },
-{
-    "id": 939,
-    "question": "다음 중 수렵 가능한 야생동물은?",
-    "options": [
-        {
-            "text": "노랑부리백로(여름)",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/chinese%20egret.png?raw=true"
-        },
-        {
-            "text": "넓적부리도요",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/spoon-billed%20sandpiper.png?raw=true"        },
-        },
-        {
-            "text": "멧비둘기",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pigeon.png?raw=true"
-        },
-        {
-            "text": "두루미",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/crane.png?raw=true"
-        }
-    ],
-    "correctAnswer": 2
-}
+    {
+        "id": 939,
+        "question": "다음 중 수렵 가능한 야생동물은?",
+        "options": [
+            {
+                "text": "노랑부리백로(여름)",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/chinese%20egret.png?raw=true"
+            },
+            {
+                "text": "넓적부리도요",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/spoon-billed%20sandpiper.png?raw=true"
+            },
+            {
+                "text": "멧비둘기",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/pigeon.png?raw=true"
+            },
+            {
+                "text": "두루미",
+                "image": "https://github.com/omenofruin/huntexam/blob/main/image/crane.png?raw=true"
+            }
+        ],
+        "correctAnswer": 2
+    }
 
 ]
