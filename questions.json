@@ -10282,10 +10282,22 @@
     "id": 937,
     "question": "다음 중 수렵 불가능한 야생동물은?",
     "options": [
-        "꿩(암컷)",
-        "꿩(수컷)",
-        "멧비둘기",
-        "까마귀"
+        {
+            "text": "꿩(암컷)",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant(female).png?raw=true"
+        },
+        {
+            "text": "꿩(수컷)",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant(male).png?raw=true"
+        },
+        {
+            "text": "멧비둘기",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pigeon.png?raw=true"
+        },
+        {
+            "text": "까마귀",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/crow.png?raw=true
+        }
     ],
     "correctAnswer": 0
 },
@@ -10295,19 +10307,19 @@
     "options": [
         {
             "text": "검독수리",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant(female).png?raw=true"
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/godlen%20eagle.png?raw=true"
         },
         {
             "text": "꿩(수컷)",
-            "image": null
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pheasant(male).png?raw=true"
         },
         {
             "text": "넓적부리도요",
-            "image": null
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/spoon-billed%20sandpiper.png?raw=true"
         },
         {
             "text": "노랑부리백로(여름)",
-            "image": null
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/chinese%20egret.png?raw=true"
         }
     ],
     "correctAnswer": 1
@@ -10316,10 +10328,22 @@
     "id": 939,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
-        "노랑부리백로(여름)",
-        "넓적부리도요",
-        "멧비둘기",
-        "두루미"
+        {
+            "text": "노랑부리백로(여름)",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/chinese%20egret.png?raw=true"
+        },
+        {
+            "text": "넓적부리도요",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/spoon-billed%20sandpiper.png?raw=true"        },
+        },
+        {
+            "text": "멧비둘기",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/pigeon.png?raw=true"
+        },
+        {
+            "text": "두루미",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/crane.png?raw=true"
+        }
     ],
     "correctAnswer": 2
 }
