@@ -10281,15 +10281,24 @@
 },{
     "id": 937,
     "question": "다음 중 수렵 불가능한 야생동물은?",
-    "image": ["https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true",
-            "https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true",
-            "https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true"
-    ]
+    "image": null,
     "options": [
-        "꿩(암컷)",
-        "꿩(수컷)",
-        "멧비둘기",
-        "까마귀"
+        {
+            "text": "꿩(암컷)",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/image01.png?raw=true"
+        },
+        {
+            "text": "꿩(수컷)",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/image02.png?raw=true"
+        },
+        {
+            "text": "멧비둘기",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/image03.png?raw=true"
+        },
+        {
+            "text": "까마귀",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/image04.png?raw=true"
+        }
     ],
     "correctAnswer": 0
 },
