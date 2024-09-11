@@ -155,7 +155,7 @@
                         <label>
                             <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})">
                             ${option.text}
-                            <img src="${option.image}" alt="이미지">
+                            ${option.image ? `<img src="${option.image}" alt="이미지">` : ''}
                         </label>
                     `).join('')}
                 </div>
