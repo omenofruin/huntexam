@@ -10836,7 +10836,7 @@
             "image": "https://github.com/omenofruin/huntexam/blob/main/image/wildboar.png?raw=true"
         },
         {
-            "text": "삵",
+            "text": "스라소니",
             "image": "https://github.com/omenofruin/huntexam/blob/main/image/leopardcat.png?raw=true"
         },
         {
@@ -10968,7 +10968,7 @@
             "image": "https://github.com/omenofruin/huntexam/blob/main/image/furseal.png?raw=true"
         },
         {
-            "text": "고양이",
+            "text": "삵",
             "image": "https://github.com/omenofruin/huntexam/blob/main/image/cat.png?raw=true"
         },
         {
@@ -11708,7 +11708,753 @@
         }
     ],
     "correctAnswer": 3
+},{
+    "id": 998,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
+    "options": [
+        {
+            "text": "박쥐",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "멧돼지",
+            "image": null
+        },
+        {
+            "text": "고방오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 999,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
+    "options": [
+        {
+            "text": "청설모",
+            "image": null
+        },
+        {
+            "text": "호랑이",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "고방오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1000,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
+    "options": [
+        {
+            "text": "까마귀",
+            "image": null
+        },
+        {
+            "text": "쇠오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "흰뺨검둥오리",
+            "image": null
+        },
+        {
+            "text": "흰꼬리수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1001,
+    "question": "다음 중 수렵 가능한 야생동물은?",
+    "options": [
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "수달",
+            "image": null
+        },
+        {
+            "text": "물개",
+            "image": null
+        },
+        {
+            "text": "물범",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1002,
+    "question": "다음 중 수렵 가능한 야생동물은?",
+    "options": [
+        {
+            "text": "담비",
+            "image": null
+        },
+        {
+            "text": "???",
+            "image": null
+        },
+        {
+            "text": "까마귀",
+            "image": null
+        },
+        {
+            "text": "검은머리갈매기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1003,
+    "question": "다음 중 수렵 가능한 야생동물은?",
+    "options": [
+        {
+            "text": "검은목두루미",
+            "image": null
+        },
+        {
+            "text": "꿩(수컷)",
+            "image": null
+        },
+        {
+            "text": "긴점박이올빼미",
+            "image": null
+        },
+        {
+            "text": "고대갈매기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},{
+    "id": 1004,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 포유류가 아닌 것은?",
+    "options": [
+        {
+            "text": "늑대",
+            "image": null
+        },
+        {
+            "text": "대륙사슴",
+            "image": null
+        },
+        {
+            "text": "반달가슴곰",
+            "image": null
+        },
+        {
+            "text": "오소리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1005,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 포유류가 아닌 것은?",
+    "options": [
+        {
+            "text": "산양",
+            "image": null
+        },
+        {
+            "text": "토끼",
+            "image": null
+        },
+        {
+            "text": "고라니",
+            "image": null
+        },
+        {
+            "text": "박쥐",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1006,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 포유류가 아닌 것은?",
+    "options": [
+        {
+            "text": "수달",
+            "image": null
+        },
+        {
+            "text": "스라소니",
+            "image": null
+        },
+        {
+            "text": "족제비",
+            "image": null
+        },
+        {
+            "text": "여우",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 1007,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 포유류가 아닌 것은?",
+    "options": [
+        {
+            "text": "표범",
+            "image": null
+        },
+        {
+            "text": "너구리",
+            "image": null
+        },
+        {
+            "text": "호랑이",
+            "image": null
+        },
+        {
+            "text": "스라소니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1008,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "검독수리",
+            "image": null
+        },
+        {
+            "text": "넓적부리도요",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로(여름)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1009,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "꿩(암컷)",
+            "image": null
+        },
+        {
+            "text": "두루미",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로",
+            "image": null
+        },
+        {
+            "text": "저어새(겨울)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},{
+    "id": 1010,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "크낙새(수컷)",
+            "image": null
+        },
+        {
+            "text": "참수리",
+            "image": null
+        },
+        {
+            "text": "쇠오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "청다리도요사촌(여름)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1011,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "황새",
+            "image": null
+        },
+        {
+            "text": "청둥오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "혹고니",
+            "image": null
+        },
+        {
+            "text": "흰꼬리수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1012,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "저어새(여름)",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로(여름)",
+            "image": null
+        },
+        {
+            "text": "검독수리",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1013,
+    "question": "다음 중 멸종위기종 야생생물 I급으로 지정된 동물은?",
+    "options": [
+        {
+            "text": "멧돼지",
+            "image": null
+        },
+        {
+            "text": "늑대",
+            "image": null
+        },
+        {
+            "text": "청설모",
+            "image": null
+        },
+        {
+            "text": "고라니니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1014,
+    "question": "다음 중 멸종위기종 야생생물 I급으로 지정된 동물은?",
+    "options": [
+        {
+            "text": "꿩(수컷)",
+            "image": null
+        },
+        {
+            "text": "쇠오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "스라소니",
+            "image": null
+        },
+        {
+            "text": "고방오리(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1015,
+    "question": "다음 중 멸종위기종 야생생물 I급으로 지정된 동물은?",
+    "options": [
+        {
+            "text": "호랑이",
+            "image": null
+        },
+        {
+            "text": "갈까마귀(암컷)",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "청설모",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},{
+    "id": 1016,
+    "question": "다음 중 멸종위기종 야생생물 I급으로 지정된 동물은?",
+    "options": [
+        {
+            "text": "두루미",
+            "image": null
+        },
+        {
+            "text": "떼까마귀",
+            "image": null
+        },
+        {
+            "text": "쇠오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "어치",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1017,
+    "question": "다음 중 멸종위기종 야생생물 I급으로 지정된 동물은?",
+    "options": [
+        {
+            "text": "청둥오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "참수리",
+            "image": null
+        },
+        {
+            "text": "청둥오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "갈까마귀(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1018,
+    "question": "다음 중 멸종위기종 야생생물 I급으로 지정된 동물은?",
+    "options": [
+        {
+            "text": "까치",
+            "image": null
+        },
+        {
+            "text": "꿩(수컷)",
+            "image": null
+        },
+        {
+            "text": "혹고니",
+            "image": null
+        },
+        {
+            "text": "꿩(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 1019,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 포유류가 아닌 것은?",
+    "options": [
+        {
+            "text": "담비",
+            "image": null
+        },
+        {
+            "text": "하늘다람쥐",
+            "image": null
+        },
+        {
+            "text": "수달",
+            "image": null
+        },
+        {
+            "text": "물개",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1020,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 포유류가 아닌 것은?",
+    "options": [
+        {
+            "text": "삵",
+            "image": null
+        },
+        {
+            "text": "물범",
+            "image": null
+        },
+        {
+            "text": "박쥐",
+            "image": null
+        },
+        {
+            "text": "고라니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1021,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 포유류가 아닌 것은?",
+    "options": [
+        {
+            "text": "박쥐",
+            "image": null
+        },
+        {
+            "text": "바다사자",
+            "image": null
+        },
+        {
+            "text": "청설모",
+            "image": null
+        },
+        {
+            "text": "하늘다람쥐",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 1022,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "개리",
+            "image": null
+        },
+        {
+            "text": "검은머리갈매기",
+            "image": null
+        },
+        {
+            "text": "꿩(암컷)",
+            "image": null
+        },
+        {
+            "text": "검은머리물떼새",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1023,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "검은머리촉새(암컷)",
+            "image": null
+        },
+        {
+            "text": "큰덤불해오라기",
+            "image": null
+        },
+        {
+            "text": "검은목두루미",
+            "image": null
+        },
+        {
+            "text": "고니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1024,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "고대갈매기",
+            "image": null
+        },
+        {
+            "text": "긴점박이올빼미",
+            "image": null
+        },
+        {
+            "text": "까막딱따구리(암컷)",
+            "image": null
+        },
+        {
+            "text": "쇠오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1025,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "긴꼬리딱새",
+            "image": null
+        },
+        {
+            "text": "노랑부리저어새(겨울)",
+            "image": null
+        },
+        {
+            "text": "긴점박이올빼미",
+            "image": null
+        },
+        {
+            "text": "느시",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1026,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "독수리",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "따오기(수컷)",
+            "image": null
+        },
+        {
+            "text": "뜸부기(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1027,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "고방오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "참매",
+            "image": null
+        },
+        {
+            "text": "무당새",
+            "image": null
+        },
+        {
+            "text": "물수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},{
+    "id": 1028,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "벌매(수컷)",
+            "image": null
+        },
+        {
+            "text": "붉은배새매",
+            "image": null
+        },
+        {
+            "text": "까치",
+            "image": null
+        },
+        {
+            "text": "붉은해오라기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1029,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "뿔쇠오리(겨울)",
+            "image": null
+        },
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "뿔종다리",
+            "image": null
+        },
+        {
+            "text": "새매",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1030,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "새호뢰기",
+            "image": null
+        },
+        {
+            "text": "섬개개비",
+            "image": null
+        },
+        {
+            "text": "솔개",
+            "image": null
+        },
+        {
+            "text": "참수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
 }
-
-
 ]
