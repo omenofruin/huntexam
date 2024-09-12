@@ -11236,19 +11236,19 @@
     "question": "다음 중 환경부장관이 고시한 멸종위기에 처한 야생동물은?",
     "options": [
         {
-            "text": "①",
+            "text": "멧돼지",
             "image": null
         },
         {
-            "text": "②",
+            "text": "고라니",
             "image": null
         },
         {
-            "text": "③",
+            "text": "물개",
             "image": null
         },
         {
-            "text": "④",
+            "text": "청설모",
             "image": null
         }
     ],
@@ -11440,19 +11440,19 @@
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
-            "text": "",
+            "text": "멧돼지",
             "image": null
         },
         {
-            "text": "",
+            "text": "박쥐",
             "image": null
         },
         {
-            "text": "",
+            "text": "노랑부리백로",
             "image": null
         },
         {
-            "text": "",
+            "text": "매",
             "image": null
         }
     ],
@@ -11463,19 +11463,19 @@
     "question": "다음 중 수렵 가능한 포유류는?",
     "options": [
         {
-            "text": "",
+            "text": "삵",
             "image": null
         },
         {
-            "text": "",
+            "text": "여우",
             "image": null
         },
         {
-            "text": "",
+            "text": "고라니",
             "image": null
         },
         {
-            "text": "",
+            "text": "늑대",
             "image": null
         }
     ],
@@ -11509,19 +11509,19 @@
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
     "options": [
         {
-            "text": "",
+            "text": "매",
             "image": null
         },
         {
-            "text": "",
+            "text": "멧돼지",
             "image": null
         },
         {
-            "text": "",
+            "text": "꿩(수컷)",
             "image": null
         },
         {
-            "text": "",
+            "text": "멧비둘기",
             "image": null
         }
     ],
@@ -11532,19 +11532,19 @@
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
     "options": [
         {
-            "text": "",
+            "text": "까마귀",
             "image": null
         },
         {
-            "text": "",
+            "text": "참수리",
             "image": null
         },
         {
-            "text": "",
+            "text": "청설모",
             "image": null
         },
         {
-            "text": "",
+            "text": "쇠오리(수컷)",
             "image": null
         }
     ],
@@ -11555,19 +11555,19 @@
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
     "options": [
         {
-            "text": "",
+            "text": "청설모",
             "image": null
         },
         {
-            "text": "",
+            "text": "까마귀",
             "image": null
         },
         {
-            "text": "",
+            "text": "고방오리(암컷)",
             "image": null
         },
         {
-            "text": "",
+            "text": "고니",
             "image": null
         }
     ],
@@ -11577,19 +11577,19 @@
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
-            "text": "",
+            "text": "박쥐",
             "image": null
         },
         {
-            "text": "",
+            "text": "어치",
             "image": null
         },
         {
-            "text": "",
+            "text": "삵",
             "image": null
         },
         {
-            "text": "",
+            "text": "여우",
             "image": null
         }
     ],
@@ -11600,19 +11600,19 @@
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
-            "text": "",
+            "text": "노랑부리백로",
             "image": null
         },
         {
-            "text": "",
+            "text": "두루미",
             "image": null
         },
         {
-            "text": "",
+            "text": "고라니",
             "image": null
         },
         {
-            "text": "",
+            "text": "황새",
             "image": null
         }
     ],
@@ -11623,41 +11623,41 @@
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
-            "text": "",
+            "text": "멧돼지",
             "image": null
         },
         {
-            "text": "",
+            "text": "대륙사슴",
             "image": null
         },
         {
-            "text": "",
+            "text": "고라니",
             "image": null
         },
         {
-            "text": "",
+            "text": "산양",
             "image": null
         }
     ],
-    "correctAnswer": 3
+    "correctAnswer": 0
 },{
     "id": 995,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
-            "text": "",
+            "text": "표범",
             "image": null
         },
         {
-            "text": "",
+            "text": "호랑이",
             "image": null
         },
         {
-            "text": "",
+            "text": "삵",
             "image": null
         },
         {
-            "text": "",
+            "text": "청설모",
             "image": null
         }
     ],
@@ -11668,19 +11668,19 @@
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
-            "text": "",
+            "text": "꿩(수컷)",
             "image": null
         },
         {
-            "text": "",
+            "text": "검독수리",
             "image": null
         },
         {
-            "text": "",
+            "text": "여우",
             "image": null
         },
         {
-            "text": "",
+            "text": "반달가슴곰",
             "image": null
         }
     ],
