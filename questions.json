@@ -10415,6 +10415,75 @@
             }
         ],
         "correctAnswer": 1
-    }
+    },{
+    "id": 943,
+    "question": "다음 중 수렵 가능한 야생동물은?",
+    "options": [
+        {
+            "text": "참수리",
+            "image": null
+        },
+        {
+            "text": "청다리도요사촌(겨울)",
+            "image": null
+        },
+        {
+            "text": "떼까마귀",
+            "image": null
+        },
+        {
+            "text": "청다리도요사촌(여름)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 944,
+    "question": "다음 중 수렵 가능한 야생동물은?",
+    "options": [
+        {
+            "text": "청다리도요사촌(여름)",
+            "image": null
+        },
+        {
+            "text": "크낙새(암컷)",
+            "image": null
+        },
+        {
+            "text": "크낙새(수컷)",
+            "image": null
+        },
+        {
+            "text": "쇠오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 945,
+    "question": "다음 중 수렵 가능한 야생동물은?",
+    "options": [
+        {
+            "text": "쇠오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "크낙새(암컷)",
+            "image": null
+        },
+        {
+            "text": "크낙새(수컷)",
+            "image": null
+        },
+        {
+            "text": "혹고니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+}
+
 
 ]
