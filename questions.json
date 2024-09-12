@@ -10552,7 +10552,7 @@
     ],
     "correctAnswer": 3
 },{
-    "id": 946,
+    "id": 949,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10575,7 +10575,7 @@
     "correctAnswer": 1
 },
 {
-    "id": 947,
+    "id": 950,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10598,7 +10598,7 @@
     "correctAnswer": 2
 },
 {
-    "id": 948,
+    "id": 951,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10620,7 +10620,7 @@
     ],
     "correctAnswer": 3
 },{
-    "id": 949,
+    "id": 952,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10643,7 +10643,7 @@
     "correctAnswer": 0
 },
 {
-    "id": 950,
+    "id": 953,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10666,7 +10666,7 @@
     "correctAnswer": 1
 },
 {
-    "id": 951,
+    "id": 954,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10688,7 +10688,7 @@
     ],
     "correctAnswer": 2
 },{
-    "id": 952,
+    "id": 955,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10711,7 +10711,7 @@
     "correctAnswer": 3
 },
 {
-    "id": 953,
+    "id": 956,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10734,7 +10734,7 @@
     "correctAnswer": 0
 },
 {
-    "id": 954,
+    "id": 957,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10756,7 +10756,7 @@
     ],
     "correctAnswer": 1
 },{
-    "id": 955,
+    "id": 958,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10779,7 +10779,7 @@
     "correctAnswer": 2
 },
 {
-    "id": 956,
+    "id": 959,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -10802,7 +10802,7 @@
     "correctAnswer": 2
 },
 {
-    "id": 957,
+    "id": 960,
     "question": "다음 중 수렵 불가능한 야생동물은?",
     "options": [
         {
@@ -10824,7 +10824,7 @@
     ],
     "correctAnswer": 1
 },{
-    "id": 958,
+    "id": 961,
     "question": "다음 중 수렵 불가능한 야생동물은?",
     "options": [
         {
@@ -10847,7 +10847,7 @@
     "correctAnswer": 2
 },
 {
-    "id": 959,
+    "id": 962,
     "question": "다음 중 수렵 불가능한 야생동물은?",
     "options": [
         {
@@ -10870,7 +10870,7 @@
     "correctAnswer": 0
 },
 {
-    "id": 960,
+    "id": 963,
     "question": "다음 중 수렵 불가능한 야생동물은?",
     "options": [
         {
@@ -10892,7 +10892,7 @@
     ],
     "correctAnswer": 3
 },{
-    "id": 961,
+    "id": 964,
     "question": "다음 중 수렵 불가능한 야생동물은?",
     "options": [
         {
@@ -10915,7 +10915,7 @@
     "correctAnswer": 2
 },
 {
-    "id": 962,
+    "id": 965,
     "question": "다음 중 수렵 불가능한 야생동물은?",
     "options": [
         {
@@ -10938,7 +10938,7 @@
     "correctAnswer": 1
 },
 {
-    "id": 963,
+    "id": 966,
     "question": "다음 중 수렵 불가능한 야생동물은?",
     "options": [
         {
@@ -10960,99 +10960,31 @@
     ],
     "correctAnswer": 0
 },{
-    "id": 964,
-    "question": "다음 중 최근 개체수가 감소하고 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종 위기 야생생물 II급에서 I급으로 상향 조정된 포유류는?",
-    "options": [
-        {
-            "text": "①",
-            "image": null
-        },
-        {
-            "text": "②",
-            "image": null
-        },
-        {
-            "text": "③",
-            "image": null
-        },
-        {
-            "text": "④",
-            "image": null
-        }
-    ],
-    "correctAnswer": 0
-},
-{
-    "id": 965,
-    "question": "다음 중 최근 개체수가 감소하고 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종 위기 야생생물 II급에서 I급으로 상향 조정된 포유류는?",
-    "options": [
-        {
-            "text": "①",
-            "image": null
-        },
-        {
-            "text": "②",
-            "image": null
-        },
-        {
-            "text": "③",
-            "image": null
-        },
-        {
-            "text": "④",
-            "image": null
-        }
-    ],
-    "correctAnswer": 0
-},
-{
-    "id": 966,
-    "question": "다음 수렵 동물 중 우리나라 텃새에 속하는 종류는?",
-    "options": [
-        {
-            "text": "고방오리(암컷)",
-            "image": null
-        },
-        {
-            "text": "멧비둘기",
-            "image": null
-        },
-        {
-            "text": "홍머리오리(수컷)",
-            "image": null
-        },
-        {
-            "text": "쇠오리(암컷)",
-            "image": null
-        }
-    ],
-    "correctAnswer": 2
-},{
     "id": 967,
-    "question": "다음 중 최근 개체수가 감소하고 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종 위기 야생생물 II급에서 I급으로 상향 조정된 조류는?",
+    "question": "다음 중 최근 개체수가 감소하고 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종 위기 야생생물 II급에서 I급으로 상향 조정된 포유류는?",
     "options": [
         {
-            "text": "검독수리",
+            "text": "①",
             "image": null
         },
         {
-            "text": "부엉이",
+            "text": "②",
             "image": null
         },
         {
-            "text": "느시",
+            "text": "③",
             "image": null
         },
         {
-            "text": "참매",
+            "text": "④",
             "image": null
         }
     ],
-    "correctAnswer": 2
+    "correctAnswer": 0
 },
 {
     "id": 968,
-    "question": "다음 중 최근 개체수가 감소하고 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종 위기 야생생물 II급에서 I급으로 상향 조정된 조류는?",
+    "question": "다음 중 최근 개체수가 감소하고 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종 위기 야생생물 II급에서 I급으로 상향 조정된 포유류는?",
     "options": [
         {
             "text": "①",
@@ -11075,6 +11007,74 @@
 },
 {
     "id": 969,
+    "question": "다음 수렵 동물 중 우리나라 텃새에 속하는 종류는?",
+    "options": [
+        {
+            "text": "고방오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "쇠오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 970,
+    "question": "다음 중 최근 개체수가 감소하고 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종 위기 야생생물 II급에서 I급으로 상향 조정된 조류는?",
+    "options": [
+        {
+            "text": "검독수리",
+            "image": null
+        },
+        {
+            "text": "부엉이",
+            "image": null
+        },
+        {
+            "text": "느시",
+            "image": null
+        },
+        {
+            "text": "참매",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 971,
+    "question": "다음 중 최근 개체수가 감소하고 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종 위기 야생생물 II급에서 I급으로 상향 조정된 조류는?",
+    "options": [
+        {
+            "text": "①",
+            "image": null
+        },
+        {
+            "text": "②",
+            "image": null
+        },
+        {
+            "text": "③",
+            "image": null
+        },
+        {
+            "text": "④",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 972,
     "question": "다음 중 최근에 분포면적 확대와 개체수가 안정적으로 유지되어 있는 것으로 파악되어 2022년 12월, 환경부에서 멸종위기 야생생물 I급에서 II급으로 하향 조정된 조류는?",
     "options": [
         {
@@ -11119,7 +11119,7 @@
     "correctAnswer": 3
 },
 {
-    "id": 971,
+    "id": 973,
     "question": "다음 중 환경부장관이 고시한 멸종위기에 처한 야생동물이 아닌 것은?",
     "options": [
         {
@@ -11142,7 +11142,7 @@
     "correctAnswer": 1
 },
 {
-    "id": 972,
+    "id": 974,
     "question": "다음 중 환경부장관이 고시한 멸종위기 야생동물이 아닌 것은?",
     "options": [
         {
@@ -11164,7 +11164,7 @@
     ],
     "correctAnswer": 3
 },{
-    "id": 973,
+    "id": 975,
     "question": "다음 중 환경부장관이 고시한 멸종위기 야생동물이 아닌 것은?",
     "options": [
         {
@@ -11187,7 +11187,7 @@
     "correctAnswer": 2
 },
 {
-    "id": 974,
+    "id": 976,
     "question": "다음 중 환경부장관이 고시한 멸종위기에 야생동물이 아닌 것은?",
     "options": [
         {
@@ -11210,7 +11210,7 @@
     "correctAnswer": 0
 },
 {
-    "id": 975,
+    "id": 977,
     "question": "다음 중 환경부장관이 고시한 멸종위기에 처할 우려가 있는 야생동물이 아닌 것은?",
     "options": [
         {
@@ -11232,7 +11232,7 @@
     ],
     "correctAnswer": 2
 },{
-    "id": 976,
+    "id": 978,
     "question": "다음 중 환경부장관이 고시한 멸종위기에 처한 야생동물은?",
     "options": [
         {
@@ -11278,7 +11278,7 @@
     "correctAnswer": 1
 },
 {
-    "id": 978,
+    "id": 979,
     "question": "다음 중 환경부장관이 고시한 멸종위기에 처할 우려가 있는 야생동물은?",
     "options": [
         {
@@ -11300,7 +11300,7 @@
     ],
     "correctAnswer": 0
 },{
-    "id": 979,
+    "id": 980,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것은?",
     "options": [
         {
@@ -11323,7 +11323,7 @@
     "correctAnswer": 3
 },
 {
-    "id": 980,
+    "id": 981,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것은?",
     "options": [
         {
@@ -11346,7 +11346,7 @@
     "correctAnswer": 0
 },
 {
-    "id": 981,
+    "id": 982,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것은?",
     "options": [
         {
@@ -11368,7 +11368,7 @@
     ],
     "correctAnswer": 3
 },{
-    "id": 982,
+    "id": 983,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -11391,7 +11391,7 @@
     "correctAnswer": 3
 },
 {
-    "id": 983,
+    "id": 984,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -11414,7 +11414,7 @@
     "correctAnswer": 0
 },
 {
-    "id": 984,
+    "id": 985,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -11436,7 +11436,7 @@
     ],
     "correctAnswer": 2
 },{
-    "id": 985,
+    "id": 986,
     "question": "다음 중 수렵 가능한 야생동물은?",
     "options": [
         {
@@ -11459,7 +11459,7 @@
     "correctAnswer": 0
 },
 {
-    "id": 986,
+    "id": 987,
     "question": "다음 중 수렵 가능한 포유류는?",
     "options": [
         {
@@ -11482,7 +11482,7 @@
     "correctAnswer": 2
 },
 {
-    "id": 987,
+    "id": 988,
     "question": "다음 중 수렵 가능한 조류는?",
     "options": [
         {
@@ -11505,29 +11505,6 @@
     "correctAnswer": 2
 },
 {
-    "id": 988,
-    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
-    "options": [
-        {
-            "text": "",
-            "image": null
-        },
-        {
-            "text": "",
-            "image": null
-        },
-        {
-            "text": "",
-            "image": null
-        },
-        {
-            "text": "",
-            "image": null
-        }
-    ],
-    "correctAnswer": 0
-},
-{
     "id": 989,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
     "options": [
@@ -11548,7 +11525,7 @@
             "image": null
         }
     ],
-    "correctAnswer": 1
+    "correctAnswer": 0
 },
 {
     "id": 990,
@@ -11571,9 +11548,32 @@
             "image": null
         }
     ],
+    "correctAnswer": 1
+},
+{
+    "id": 991,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것은?",
+    "options": [
+        {
+            "text": "",
+            "image": null
+        },
+        {
+            "text": "",
+            "image": null
+        },
+        {
+            "text": "",
+            "image": null
+        },
+        {
+            "text": "",
+            "image": null
+        }
+    ],
     "correctAnswer": 3
 },{
-    "id": 991,
+    "id": 992,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
@@ -11596,7 +11596,7 @@
     "correctAnswer": 1
 },
 {
-    "id": 992,
+    "id": 993,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
@@ -11619,7 +11619,7 @@
     "correctAnswer": 2
 },
 {
-    "id": 993,
+    "id": 994,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
@@ -11641,7 +11641,7 @@
     ],
     "correctAnswer": 3
 },{
-    "id": 994,
+    "id": 995,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
@@ -11664,7 +11664,7 @@
     "correctAnswer": 3
 },
 {
-    "id": 995,
+    "id": 996,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
@@ -11687,7 +11687,7 @@
     "correctAnswer": 0
 },
 {
-    "id": 996,
+    "id": 997,
     "question": "다음 중 멸종위기 야생생물 I급으로 지정된 것이 아닌 것은?",
     "options": [
         {
