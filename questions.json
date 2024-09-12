@@ -10633,7 +10633,7 @@
         },
         {
             "text": "검은머리갈매기",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/Saunders's%20gull.png?raw=true"
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/Saunders's%20gull(female).png?raw=true"
         },
         {
             "text": "검은머리촉새(암컷)",
@@ -10656,7 +10656,7 @@
         },
         {
             "text": "검은머리갈매기",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/Saunders's%20gull.png?raw=true"
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/Saunders's%20gull(female).png?raw=true"
         },
         {
             "text": "검은머리촉새(암컷)",
@@ -10675,7 +10675,7 @@
         },
         {
             "text": "검은머리갈매기",
-            "image": "https://github.com/omenofruin/huntexam/blob/main/image/Saunders's%20gull.png?raw=true"
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/Saunders's%20gull(female).png?raw=true"
         },
         {
             "text": "고방오리(수컷)",
@@ -11180,8 +11180,8 @@
             "image": "https://github.com/omenofruin/huntexam/blob/main/image/red%20squirrel.png?raw=true"
         },
         {
-            "text": "참매",
-            "image": null
+            "text": "새호리기",
+            "image": "https://github.com/omenofruin/huntexam/blob/main/image/eurasian%20hobby.png?raw=true"
         }
     ],
     "correctAnswer": 2
