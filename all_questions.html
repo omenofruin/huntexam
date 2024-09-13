@@ -35,7 +35,7 @@
         .section-title {
             font-size: 1.5em;
             margin-top: 30px;
-            margin-bottom: 20px; /* 추가된 여백 */
+            margin-bottom: 20px;
             color: #444;
         }
         .question-block {
@@ -186,13 +186,12 @@
                     <div class="options">
                         ${q.options.map((option, i) => `
                             <label>
-                                <input type="checkbox" name="question${q.id}" value="${i}" class="answer-option">
+                                <input type="checkbox" name="question${q.id}" value="${i}" class="answer-option" onchange="checkAnswer(${index})">
                                 ${typeof option === 'object' ? option.text : option}
                                 ${typeof option === 'object' && option.image ? `<img src="${option.image}" alt="선택지 이미지">` : ''}
                             </label>
                         `).join('')}
                     </div>
-                    <button onclick="checkAnswer(${index})">정답 확인</button>
                     <div id="result${index}" class="result"></div>
                 `;
 
@@ -236,6 +235,7 @@ function checkAnswer(questionIndex) {
         }
     }
 }
+
 
     // 페이지 초기화 함수
     function resetPage() {
