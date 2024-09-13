@@ -207,11 +207,22 @@
         })
         .catch(error => console.error('Error fetching the question data:', error));
 
-    // 정답 확인 함수
-    function checkAnswer(questionIndex, selectedOption) {
-        const resultDiv = document.getElementById(`result${questionIndex}`);
-        const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 미리 로드된 데이터에서 정답 확인
+   // 정답 확인 함수 (복수 정답 지원)
+function checkAnswer(questionIndex, selectedOption) {
+    const resultDiv = document.getElementById(`result${questionIndex}`);
+    const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 정답 배열을 가져옴
 
+    // correctAnswer가 배열인 경우를 처리
+    if (Array.isArray(correctAnswer)) {
+        if (correctAnswer.includes(selectedOption)) {
+            resultDiv.textContent = "정답입니다!";
+            resultDiv.className = "result correct";
+        } else {
+            resultDiv.textContent = `오답입니다.`;
+            resultDiv.className = "result incorrect";
+        }
+    } else {
+        // 기존 단일 정답 처리
         if (selectedOption === correctAnswer) {
             resultDiv.textContent = "정답입니다!";
             resultDiv.className = "result correct";
@@ -220,6 +231,8 @@
             resultDiv.className = "result incorrect";
         }
     }
+}
+
 
     // 페이지 초기화 함수
     function resetPage() {
