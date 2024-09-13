@@ -186,12 +186,13 @@
                     <div class="options">
                         ${q.options.map((option, i) => `
                             <label>
-                                <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})">
+                                <input type="checkbox" name="question${q.id}" value="${i}" class="answer-option">
                                 ${typeof option === 'object' ? option.text : option}
                                 ${typeof option === 'object' && option.image ? `<img src="${option.image}" alt="선택지 이미지">` : ''}
                             </label>
                         `).join('')}
                     </div>
+                    <button onclick="checkAnswer(${index})">정답 확인</button>
                     <div id="result${index}" class="result"></div>
                 `;
 
@@ -208,13 +209,16 @@
         .catch(error => console.error('Error fetching the question data:', error));
 
    // 정답 확인 함수 (복수 정답 지원)
-function checkAnswer(questionIndex, selectedOption) {
+function checkAnswer(questionIndex) {
     const resultDiv = document.getElementById(`result${questionIndex}`);
     const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 정답 배열을 가져옴
+    const selectedOptions = Array.from(document.querySelectorAll(`input[name="question${allQuestions[questionIndex].id}"]:checked`))
+                                 .map(option => parseInt(option.value)); // 선택된 옵션의 값을 가져옴
 
     // correctAnswer가 배열인 경우를 처리
     if (Array.isArray(correctAnswer)) {
-        if (correctAnswer.includes(selectedOption)) {
+        const allCorrect = selectedOptions.length === correctAnswer.length && selectedOptions.every(option => correctAnswer.includes(option));
+        if (allCorrect) {
             resultDiv.textContent = "정답입니다!";
             resultDiv.className = "result correct";
         } else {
@@ -223,37 +227,9 @@ function checkAnswer(questionIndex, selectedOption) {
         }
     } else {
         // 기존 단일 정답 처리
-        if (selectedOption === correctAnswer) {
+        if (selectedOptions.length === 1 && selectedOptions[0] === correctAnswer) {
             resultDiv.textContent = "정답입니다!";
             resultDiv.className = "result correct";
         } else {
             resultDiv.textContent = `오답입니다.`;
-            resultDiv.className = "result incorrect";
-        }
-    }
-}
-
-
-    // 페이지 초기화 함수
-    function resetPage() {
-        location.reload();  // 페이지를 새로 고침합니다.
-    }
-
-    // 페이지 맨 위로 스크롤하는 함수
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 페이지 맨 아래로 스크롤하는 함수
-    function scrollToBottom() {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-
-    // 이전 화면으로 돌아가는 함수
-    function goBack() {
-        window.history.back();
-    }
-</script>
-
-</body>
-</html>
+            resultDiv.className = "result
