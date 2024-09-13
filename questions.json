@@ -14904,5 +14904,416 @@
         }
     ],
     "correctAnswer": 0
+},{
+    "id": 1139,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생동물 포유류(13종)에 속한 것이 아닌 것은?",
+    "options": [
+        {
+            "text": "오소리",
+            "image": null
+        },
+        {
+            "text": "너구리",
+            "image": null
+        },
+        {
+            "text": "물개",
+            "image": null
+        },
+        {
+            "text": "여우",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1140,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생동물 포유류(13종)에 속한 것이 아닌 것은?",
+    "options": [
+        {
+            "text": "물범",
+            "image": null
+        },
+        {
+            "text": "사향노루",
+            "image": null
+        },
+        {
+            "text": "고라니",
+            "image": null
+        },
+        {
+            "text": "수달",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1141,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생동물 포유류(13종)에 속한 것이 아닌 것은?",
+    "options": [
+        {
+            "text": "삵",
+            "image": null
+        },
+        {
+            "text": "바다사자",
+            "image": null
+        },
+        {
+            "text": "멧돼지",
+            "image": null
+        },
+        {
+            "text": "담비",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 1142,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생동물 조류(9종)에 속한 것이 아닌 것은?",
+    "options": [
+        {
+            "text": "청둥오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "꿩(수컷)",
+            "image": null
+        },
+        {
+            "text": "흑기러기",
+            "image": null
+        },
+        {
+            "text": "큰기러기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1143,
+    "question": "다음 중 야「생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생동물 조류(9종)에 속한 것이 아닌 것은?",
+    "options": [
+        {
+            "text": "흰뺨검둥오리",
+            "image": null
+        },
+        {
+            "text": "고방오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "갈까마귀(암컷)",
+            "image": null
+        },
+        {
+            "text": "쇠오리(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1144,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생동물 조류(9종)에 속한 것이 아닌 것은?",
+    "options": [
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "뜸부기(수컷)",
+            "image": null
+        },
+        {
+            "text": "청둥오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "뜸부기(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},{
+    "id": 1145,
+    "question": "다음 중 수컷의 겨울깃은 이마와 머리꼭대기가 붉게 녹슨 색을 띤 크림색이며, 그 이 외의 머리 부분은 붉은 밤색이고, 초습지의 숲속에서 번식하는 겨울철새는?",
+    "options": [
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "까마귀",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1146,
+    "question": "다음 중 새끼는 황갈색 바탕에 흰색 줄무늬가 있으며 성장하면서 점차 사라지고, 어두운 계곡에서 휴식을 취하다 해가 지는 시각에 활동하는 야행성 동물은?",
+    "options": [
+        {
+            "text": "멧돼지",
+            "image": null
+        },
+        {
+            "text": "청설모",
+            "image": null
+        },
+        {
+            "text": "늑대",
+            "image": null
+        },
+        {
+            "text": "너구리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1147,
+    "question": "다음 중 수렵이 불가능한 야생동물은?",
+    "options": [
+        {
+            "text": "홍머리오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "청둥오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "개리",
+            "image": null
+        },
+        {
+            "text": "쇠오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 1148,
+    "question": "다음 중 「문화재보호법」 시행규칙에 의거하여 진귀하고 보존이 필요하거나 학술적으로 중요한 동물로 지정된 동물은?",
+    "options": [
+        {
+            "text": "사향노루",
+            "image": null
+        },
+        {
+            "text": "늑대",
+            "image": null
+        },
+        {
+            "text": "대륙사슴(수컷)",
+            "image": null
+        },
+        {
+            "text": "스라소니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1149,
+    "question": "다음 중 「문화재보호법」 시행규칙에 의거하여 진귀하고 보존이 필요하거나 학술적으로 중요한 동물로 지정된 동물은?",
+    "options": [
+        {
+            "text": "여우",
+            "image": null
+        },
+        {
+            "text": "수달",
+            "image": null
+        },
+        {
+            "text": "표범",
+            "image": null
+        },
+        {
+            "text": "노루",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1150,
+    "question": "다음 중 「문화재보호법」 시행규칙에 의거하여 진귀하고 보존이 필요하거나 학술적으로 중요한 동물로 지정된 동물이 아닌 것은?",
+    "options": [
+        {
+            "text": "뜸부기(암컷)",
+            "image": null
+        },
+        {
+            "text": "팔색조",
+            "image": null
+        },
+        {
+            "text": "수리부엉이",
+            "image": null
+        },
+        {
+            "text": "고대갈매기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1151,
+    "question": "다음 중 암수 모두 뿔이 없고, 교미시기가 11월~1월이며, 한 번에 1~3마리의 새끼를 출산하는 야생동물은?",
+    "options": [
+        {
+            "text": "고라니",
+            "image": null
+        },
+        {
+            "text": "대륙사슴(암컷)",
+            "image": null
+        },
+        {
+            "text": "사향노루",
+            "image": null
+        },
+        {
+            "text": "산양",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1152,
+    "question": "다음 중 잡식성의 식성을 갖고 있고, 활엽수가 우거진 곳에 서식하며, 강설이 심할 때는 야산이나 동네까지 내려오기도 하는 유해야생동물은?",
+    "options": [
+        {
+            "text": "멧돼지",
+            "image": null
+        },
+        {
+            "text": "반달가슴곰",
+            "image": null
+        },
+        {
+            "text": "삵",
+            "image": null
+        },
+        {
+            "text": "여우",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1153,
+    "question": "다음 중 겨울철새로 오기도 하고 텃새로 번식하기도 하며, 기러기목 오리과에 속하는 중형오리는?",
+    "options": [
+        {
+            "text": "꿩(암컷)",
+            "image": null
+        },
+        {
+            "text": "청다리도요사촌(겨울)",
+            "image": null
+        },
+        {
+            "text": "흰뺨검둥오리",
+            "image": null
+        },
+        {
+            "text": "개리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 1154,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제43조 제1항에 따라 환경부장관이 지정·고시한 동물이 아닌 것은?",
+    "options": [
+        {
+            "text": "청설모",
+            "image": null
+        },
+        {
+            "text": "고라니",
+            "image": null
+        },
+        {
+            "text": "멧돼지",
+            "image": null
+        },
+        {
+            "text": "반달가슴곰",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1155,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제43조 제1항에 따라 환경부장관이 지정·고시한 동물이 아닌 것은?",
+    "options": [
+        {
+            "text": "오소리",
+            "image": null
+        },
+        {
+            "text": "꿩(수컷)",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "멧돼지",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0, 1
+},
+{
+    "id": 1156,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제43조 제1항에 따라 환경부장관이 지정·고시한 동물이 아닌 것은?",
+    "options": [
+        {
+            "text": "쇠오리",
+            "image": null
+        },
+        {
+            "text": "토끼",
+            "image": null
+        },
+        {
+            "text": "홍머리오리",
+            "image": null
+        },
+        {
+            "text": "청설모",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
 }
+
+
+
 ]
