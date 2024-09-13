@@ -232,4 +232,31 @@ function checkAnswer(questionIndex) {
             resultDiv.className = "result correct";
         } else {
             resultDiv.textContent = `오답입니다.`;
-            resultDiv.className = "result
+            resultDiv.className = "result incorrect";
+        }
+    }
+}
+
+    // 페이지 초기화 함수
+    function resetPage() {
+        location.reload();  // 페이지를 새로 고침합니다.
+    }
+
+    // 페이지 맨 위로 스크롤하는 함수
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 페이지 맨 아래로 스크롤하는 함수
+    function scrollToBottom() {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    // 이전 화면으로 돌아가는 함수
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>
