@@ -13952,5 +13952,957 @@
         }
     ],
     "correctAnswer": 0
+},{
+    "id": 1097,
+    "question": "다음 중 암컷과 수컷을 쉽게 구별할 수 있는 것은?",
+    "options": [
+        {
+            "text": "박쥐",
+            "image": null
+        },
+        {
+            "text": "담비",
+            "image": null
+        },
+        {
+            "text": "물범",
+            "image": null
+        },
+        {
+            "text": "호사비오리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1098,
+    "question": "다음 중 암컷과 수컷을 쉽게 구별할 수 없는 것은?",
+    "options": [
+        {
+            "text": "고방오리",
+            "image": null
+        },
+        {
+            "text": "갈까마귀",
+            "image": null
+        },
+        {
+            "text": "꿩",
+            "image": null
+        },
+        {
+            "text": "흰꼬리수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1099,
+    "question": "다음 중 암컷과 수컷을 쉽게 구별할 수 없는 것은?",
+    "options": [
+        {
+            "text": "쇠검은머리쑥새",
+            "image": null
+        },
+        {
+            "text": "수리부엉이",
+            "image": null
+        },
+        {
+            "text": "벌매",
+            "image": null
+        },
+        {
+            "text": "뜸부기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},{
+    "id": 1100,
+    "question": "다음 중 본래 제주도에 서식하지 않았으나 행사의 일환으로 방생된 후 급속히 번식하여 생태계를 교란하게 된 종은?",
+    "options": [
+        {
+            "text": "흑비둘기",
+            "image": null
+        },
+        {
+            "text": "까치",
+            "image": null
+        },
+        {
+            "text": "잿빛개구리매(암컷)",
+            "image": null
+        },
+        {
+            "text": "검은머리촉새(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1101,
+    "question": "다음 중 수컷의 머리는 갈색이며 옆 목에 흰색의 선이 있고 앞 목은 흰색이다. 또한, 옆구리는 회색 바탕에 가로줄이 있고, 꼬리가 길고 뾰족한 조류는?",
+    "options": [
+        {
+            "text": "고방오리",
+            "image": null
+        },
+        {
+            "text": "까치",
+            "image": null
+        },
+        {
+            "text": "참매",
+            "image": null
+        },
+        {
+            "text": "잿빛개구리매",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1102,
+    "question": "다음 중 태어나자마자 눈을 뜨고 어미를 따라다니며 천적을 피하는 조류는?",
+    "options": [
+        {
+            "text": "청둥오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "넓적부리도요",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},{
+    "id": 1103,
+    "question": "다음 까마귀 종류 중 우리나라에 겨울철새로 찾아오는 까마귀는?",
+    "options": [
+        {
+            "text": "까마귀",
+            "image": null
+        },
+        {
+            "text": "갈까마귀",
+            "image": null
+        },
+        {
+            "text": "떼까마귀",
+            "image": null
+        },
+        {
+            "text": "갈까마귀(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1104,
+    "question": "다음 중 머리 위와 뺨은 회색이고, 뒷머리에서 윗등까지는 포도빛 회갈색을 띄며, 침염·활엽수림이나 아고산지대의 혼합림에 많이 서식하는 조류는?",
+    "options": [
+        {
+            "text": "홍머리오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "흰뺨검둥오리",
+            "image": null
+        },
+        {
+            "text": "고방오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1105,
+    "question": "다음 중 수컷이 암컷에 비해 화려하고, 수컷의 목에는 흰색의 띠가 있는 조류는?",
+    "options": [
+        {
+            "text": "꿩",
+            "image": null
+        },
+        {
+            "text": "검독수리",
+            "image": null
+        },
+        {
+            "text": "매",
+            "image": null
+        },
+        {
+            "text": "흰꼬리수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},{
+    "id": 1106,
+    "question": "다음 중 집오리의 조상으로, 색이 비슷한 집오리와 구분하기 힘든 오리는?",
+    "options": [
+        {
+            "text": "쇠오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "청둥오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "고방오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "고방오리(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1107,
+    "question": "다음 중 수컷은 장끼, 암컷은 까투리라 불리며, 수컷만 수렵이 가능한 조류는?",
+    "options": [
+        {
+            "text": "꿩(수컷)",
+            "image": null
+        },
+        {
+            "text": "청둥오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "고방오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "흰뺨검둥오리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1108,
+    "question": "다음 중 산림, 주택가, 도시공원 등 도처에서 볼 수 있고, 암수가 같은 색이며, 회색 바탕에 갈색을 띠고 가슴과 배는 엶은 갈색을 띤 잿빛인 조류는?",
+    "options": [
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "갈까마귀(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},{
+    "id": 1109,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생 동물(포유류 13종 및 조류 9종)에 속한 것은?",
+    "options": [
+        {
+            "text": "반달가슴곰",
+            "image": null
+        },
+        {
+            "text": "흰목물떼새",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "갈까마귀(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1110,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생동물(포유류 13종 및 조류 9종)에 속한 것은?",
+    "options": [
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "까치",
+            "image": null
+        },
+        {
+            "text": "사향노루",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1111,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제9조 제1항에 따라 먹는 것이 금지된 야생동물 조류(9종)에 속한 것은?",
+    "options": [
+        {
+            "text": "고방오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 1112,
+    "question": "다음 중 1971년 음성군에서 밀렵에 의해 수컷이 희생되고, 남은 암컷이 대공원에서 폐사한 것을 마지막으로 텃새로서는 우리나라에서 절멸하여 복원을 시도 중인 종류는?",
+    "options": [
+        {
+            "text": "노랑부리백로(여름)",
+            "image": null
+        },
+        {
+            "text": "황새",
+            "image": null
+        },
+        {
+            "text": "두루미",
+            "image": null
+        },
+        {
+            "text": "저어새(여름)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1113,
+    "question": "다음 중 여름철새에 속하는 새는?",
+    "options": [
+        {
+            "text": "팔색조",
+            "image": null
+        },
+        {
+            "text": "꿩(암컷)",
+            "image": null
+        },
+        {
+            "text": "흰뺨검둥오리",
+            "image": null
+        },
+        {
+            "text": "청둥오리(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1114,
+    "question": "다음 중 겨울철새에 속하는 새는?",
+    "options": [
+        {
+            "text": "올빼미",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "새호리기",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},{
+    "id": 1115,
+    "question": "다음 중 봄, 가을에 우리나라를 통과하는 종류의 새가 아닌 것은?",
+    "options": [
+        {
+            "text": "떼까마귀",
+            "image": null
+        },
+        {
+            "text": "큰기러기",
+            "image": null
+        },
+        {
+            "text": "알락개구리매(암컷)",
+            "image": null
+        },
+        {
+            "text": "알락꼬리마도요",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1116,
+    "question": "다음 중 여름철새에 속하는 새는?",
+    "options": [
+        {
+            "text": "까치",
+            "image": null
+        },
+        {
+            "text": "큰덤불해오라기(수컷)",
+            "image": null
+        },
+        {
+            "text": "크낙새(수컷)",
+            "image": null
+        },
+        {
+            "text": "까마귀",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1117,
+    "question": "다음 중 겨울철새에 속하는 새는?",
+    "options": [
+        {
+            "text": "까치",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "올빼미",
+            "image": null
+        },
+        {
+            "text": "독수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1118,
+    "question": "다음 중 여름철새에 속하는 새는?",
+    "options": [
+        {
+            "text": "새호리기",
+            "image": null
+        },
+        {
+            "text": "까마귀",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1119,
+    "question": "다음 중 겨울철새에 속하는 새는?",
+    "options": [
+        {
+            "text": "올빼미",
+            "image": null
+        },
+        {
+            "text": "쇠오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "크낙새(수컷)",
+            "image": null
+        },
+        {
+            "text": "어치",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1120,
+    "question": "다음 중 철새에 속하지 않는 새는?",
+    "options": [
+        {
+            "text": "고니",
+            "image": null
+        },
+        {
+            "text": "독수리",
+            "image": null
+        },
+        {
+            "text": "큰덤불해오라기(암컷)",
+            "image": null
+        },
+        {
+            "text": "검독수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1121,
+    "question": "다음 중 철새에 속하지 않는 새는?",
+    "options": [
+        {
+            "text": "두루미",
+            "image": null
+        },
+        {
+            "text": "쇠오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "알락꼬리마도요",
+            "image": null
+        },
+        {
+            "text": "재두루미",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1122,
+    "question": "다음 중 철새에 속하지 않는 새는?",
+    "options": [
+        {
+            "text": "참수리",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "새호리기",
+            "image": null
+        },
+        {
+            "text": "팔색조",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1123,
+    "question": "다음 중 철새에 속하지 않는 새는?",
+    "options": [
+        {
+            "text": "황새",
+            "image": null
+        },
+        {
+            "text": "알락개구리매(수컷)",
+            "image": null
+        },
+        {
+            "text": "큰덤불해오라기(수컷)",
+            "image": null
+        },
+        {
+            "text": "고방오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},{
+    "id": 1124,
+    "question": "다음 중 텃새에 속하는 새는?",
+    "options": [
+        {
+            "text": "수리부엉이",
+            "image": null
+        },
+        {
+            "text": "흰목물떼새",
+            "image": null
+        },
+        {
+            "text": "알락개구리매(수컷)",
+            "image": null
+        },
+        {
+            "text": "새호리기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1125,
+    "question": "다음 중 텃새에 속하는 새는?",
+    "options": [
+        {
+            "text": "청둥오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "고방오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "흰뺨검둥오리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1126,
+    "question": "다음 중 텃새에 속하는 새는?",
+    "options": [
+        {
+            "text": "독수리",
+            "image": null
+        },
+        {
+            "text": "올빼미",
+            "image": null
+        },
+        {
+            "text": "흰목물떼새",
+            "image": null
+        },
+        {
+            "text": "알락꼬리마도요",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},{
+    "id": 1127,
+    "question": "다음 중 텃새에 속하는 새는?",
+    "options": [
+        {
+            "text": "흰꼬리수리",
+            "image": null
+        },
+        {
+            "text": "떼까마귀",
+            "image": null
+        },
+        {
+            "text": "알락개구리매(암컷)",
+            "image": null
+        },
+        {
+            "text": "두루미",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1128,
+    "question": "다음 중 텃새에 속하지 않는 새는?",
+    "options": [
+        {
+            "text": "수리부엉이",
+            "image": null
+        },
+        {
+            "text": "크낙새(암컷)",
+            "image": null
+        },
+        {
+            "text": "고방오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "흑비둘기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1129,
+    "question": "다음 중 텃새에 속하지 않는 새는?",
+    "options": [
+        {
+            "text": "큰기러기",
+            "image": null
+        },
+        {
+            "text": "올빼미",
+            "image": null
+        },
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},{
+    "id": 1130,
+    "question": "다음 중 텃새에 속하지 않는 새는?",
+    "options": [
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "꿩(암컷)",
+            "image": null
+        },
+        {
+            "text": "크낙새(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1131,
+    "question": "다음 중 텃새에 속하지 않는 새는?",
+    "options": [
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "까마귀",
+            "image": null
+        },
+        {
+            "text": "흰꼬리수리",
+            "image": null
+        },
+        {
+            "text": "흰목물떼새",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1132,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "흰목물떼새",
+            "image": null
+        },
+        {
+            "text": "흰이마기러기",
+            "image": null
+        },
+        {
+            "text": "흰죽지수리",
+            "image": null
+        },
+        {
+            "text": "넓적부리도요",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1133,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "큰고니",
+            "image": null
+        },
+        {
+            "text": "큰기러기",
+            "image": null
+        },
+        {
+            "text": "청다리도요사촌(겨울)",
+            "image": null
+        },
+        {
+            "text": "큰덤불해오라기(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1134,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "큰말똥가리",
+            "image": null
+        },
+        {
+            "text": "팔색조",
+            "image": null
+        },
+        {
+            "text": "무당새",
+            "image": null
+        },
+        {
+            "text": "크낙새(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1135,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "흑기러기",
+            "image": null
+        },
+        {
+            "text": "항라머리검독수리",
+            "image": null
+        },
+        {
+            "text": "흑두루미",
+            "image": null
+        },
+        {
+            "text": "흰꼬리수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1136,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "쇠검은머리쑥새(수컷)",
+            "image": null
+        },
+        {
+            "text": "수리부엉이",
+            "image": null
+        },
+        {
+            "text": "검독수리",
+            "image": null
+        },
+        {
+            "text": "알락개구리매(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1137,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "알락꼬리마도요",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로(여름)",
+            "image": null
+        },
+        {
+            "text": "올빼미",
+            "image": null
+        },
+        {
+            "text": "재두루미",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1138,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것은?",
+    "options": [
+        {
+            "text": "저어새(겨울)",
+            "image": null
+        },
+        {
+            "text": "잿빛개구리매(수컷)",
+            "image": null
+        },
+        {
+            "text": "참매",
+            "image": null
+        },
+        {
+            "text": "조롱이",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
 }
 ]
