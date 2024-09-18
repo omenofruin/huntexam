@@ -15312,8 +15312,277 @@
         }
     ],
     "correctAnswer": 1
+},{
+    "id": 1157,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제43조 제1항에 따라 환경부장관이 지정·고시한 동물이 아닌 것은?",
+    "options": [
+        {
+            "text": "꿩",
+            "image": null
+        },
+        {
+            "text": "대륙사슴",
+            "image": null
+        },
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "청둥오리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1158,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제43조 제1항에 따라 환경부장관이 지정·고시한 동물이 아닌 것은?",
+    "options": [
+        {
+            "text": "검은머리물떼새",
+            "image": null
+        },
+        {
+            "text": "멧돼지",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "떼까마귀",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1159,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제43조 제1항에 따라 환경부장관이 지정·고시한 동물이 아닌 것은?",
+    "options": [
+        {
+            "text": "느시",
+            "image": null
+        },
+        {
+            "text": "청설모",
+            "image": null
+        },
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "까치",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},{
+    "id": 1160,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제43조 제1항에 따라 환경부장관이 지정·고시한 동물은?",
+    "options": [
+        {
+            "text": "고라니",
+            "image": null
+        },
+        {
+            "text": "산양",
+            "image": null
+        },
+        {
+            "text": "여우",
+            "image": null
+        },
+        {
+            "text": "표범",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1161,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률」 제43조 제1항에 따라 환경부장관이 지정·고시한 동물은?",
+    "options": [
+        {
+            "text": "꿩(암컷)",
+            "image": null
+        },
+        {
+            "text": "꿩(수컷)",
+            "image": null
+        },
+        {
+            "text": "무당새",
+            "image": null
+        },
+        {
+            "text": "뿔종다리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1162,
+    "question": "다음 중 「야생생물 보호 및 관리에 관한 법률 제43조 제1항에 따라 환경부장관이 지정·고시한 동물은?",
+    "options": [
+        {
+            "text": "뿔쇠오리(겨울)",
+            "image": null
+        },
+        {
+            "text": "뿔쇠오리(여름)",
+            "image": null
+        },
+        {
+            "text": "쇠검은머리쑥새(암컷)",
+            "image": null
+        },
+        {
+            "text": "어치",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},{
+    "id": 1163,
+    "question": "수컷의 경우 송곳니가 발달하여 채식·싸움 등에 사용하고, 뿔이 없고 털이 거칠고 굵으며, 수렵이 가능한 동물은?",
+    "options": [
+        {
+            "text": "대륙사슴",
+            "image": null
+        },
+        {
+            "text": "고라니",
+            "image": null
+        },
+        {
+            "text": "사향노루",
+            "image": null
+        },
+        {
+            "text": "산양",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1164,
+    "question": "다음 중 가을철에 우리나라로 날아와 월동을 마치고 봄철에 북쪽의 번식지로 날아가는 종류의 야생동물은?",
+    "options": [
+        {
+            "text": "까마귀",
+            "image": null
+        },
+        {
+            "text": "재두루미",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로(겨울)",
+            "image": null
+        },
+        {
+            "text": "알락꼬리마도요",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1165,
+    "question": "다음 중 가을철에 우리나라로 날아와 월동을 마치고 봄철에 북쪽의 번식지로 날아가는 종류의 야생동물은?",
+    "options": [
+        {
+            "text": "까치",
+            "image": null
+        },
+        {
+            "text": "뜸부기",
+            "image": null
+        },
+        {
+            "text": "흑두루미",
+            "image": null
+        },
+        {
+            "text": "떼까마귀",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},{
+    "id": 1166,
+    "question": "다음 중 봄철에 우리나라로 날아와 번식을 마치고 가을에 남쪽으로 이동하는 종류의 야생동물은?",
+    "options": [
+        {
+            "text": "뜸부기(수컷)",
+            "image": null
+        },
+        {
+            "text": "멧비둘기",
+            "image": null
+        },
+        {
+            "text": "수리부엉이",
+            "image": null
+        },
+        {
+            "text": "크낙새(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1167,
+    "question": "다음 중 봄철에 우리나라로 날아와 번식을 마치고 가을에 남쪽으로 이동하는 종류의 야생동물은?",
+    "options": [
+        {
+            "text": "어치",
+            "image": null
+        },
+        {
+            "text": "큰덤불해오라기(수컷)",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "혹고니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1168,
+    "question": "다음 중 봄철에 우리나라로 날아와 번식을 마치고 가을에 남쪽으로 이동하는 종류의 야생동물은?",
+    "options": [
+        {
+            "text": "참새",
+            "image": null
+        },
+        {
+            "text": "독수리",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로(겨울)",
+            "image": null
+        },
+        {
+            "text": "흰뺨검둥오리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
 }
-
-
-
 ]
