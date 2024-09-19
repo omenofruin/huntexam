@@ -29,10 +29,15 @@
             text-align: center;
         }
         .button-group {
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; /* 버튼 사이의 간격 */
             margin-bottom: 20px;
         }
         .button-group button {
+            width: 100%; /* 버튼을 100% 너비로 */
+            max-width: 400px; /* 버튼의 최대 너비 */
             background-color: #000;
             color: white;
             border: none;
@@ -40,7 +45,7 @@
             font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
-            margin: 10px;
+            text-align: center;
         }
         .button-group button:hover {
             background-color: #636363;
@@ -118,12 +123,11 @@
     <h1>과목별 문제 풀기</h1>
     <!-- 과목별 문제 선택 버튼 -->
     <div class="button-group">
-        <button onclick="loadQuestions(1)">과목 1: 수렵에 관한 법령 및 수렵 절차</button>
+        <button onclick="loadQuestions(1)">과목 1: 수렵에 관한 법령 및 절차</button>
         <button onclick="loadQuestions(2)">과목 2: 야생동물의 보호·관리에 관한 사항</button>
         <button onclick="loadQuestions(3)">과목 3-1: 수렵도구(제1종) 사용법</button>
         <button onclick="loadQuestions(4)">과목 3-2: 수렵도구(제2종) 사용법</button>
         <button onclick="loadQuestions(5)">과목 4: 안전사고의 예방 및 응급조치에 관한 사항</button>
-        <!-- 추가 과목 버튼을 원하면 여기에 추가하세요 -->
     </div>
 
     <!-- 문제를 표시할 영역 -->
