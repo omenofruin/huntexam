@@ -15584,5 +15584,672 @@
         }
     ],
     "correctAnswer": 2
+},
+{
+    "id": 1169,
+    "question": "다음 중 수렵 가능한 야생동물로만 짝지어진 것은?",
+    "options": [
+        {
+            "text": "검독수리, 두루미",
+            "image": null
+        },
+        {
+            "text": "넓적부리도요, 노랑부리백로(여름)",
+            "image": null
+        },
+        {
+            "text": "꿩(암컷), 까마귀",
+            "image": null
+        },
+        {
+            "text": "꿩(수컷), 멧비둘기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1170,
+    "question": "다음 중 수렵 가능한 야생동물로만 짝지어진 것은?",
+    "options": [
+        {
+            "text": "매, 노랑부리백로(여름)",
+            "image": null
+        },
+        {
+            "text": "저어새(겨울), 청다리도요사촌(겨울)",
+            "image": null
+        },
+        {
+            "text": "갈까마귀(암컷), 갈까마귀(수컷)",
+            "image": null
+        },
+        {
+            "text": "매, 저어새(여름)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1171,
+    "question": "다음 중 수렵 가능한 야생동물로만 짝지어진 것은?",
+    "options": [
+        {
+            "text": "크낙새(암컷), 크낙새(수컷)",
+            "image": null
+        },
+        {
+            "text": "쇠오리(암컷), 쇠오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "참수리, 청다리도사촌(겨울)",
+            "image": null
+        },
+        {
+            "text": "쇠오리(수컷), 흑고니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1172,
+    "question": "다음 중 수렵 가능한 야생동물로만 짝지어진 것은?",
+    "options": [
+        {
+            "text": "청둥오리(수컷), 홍머리오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "크낙새(수컷), 황새",
+            "image": null
+        },
+        {
+            "text": "청둥오리(암컷), 개리",
+            "image": null
+        },
+        {
+            "text": "크낙새(수컷), 검은머리갈매기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1173,
+    "question": "다음 중 수렵 가능한 야생동물로만 짝지어진 것은?",
+    "options": [
+        {
+            "text": "고니, 고대갈매기",
+            "image": null
+        },
+        {
+            "text": "흰뺨검둥오리, 어치",
+            "image": null
+        },
+        {
+            "text": "까치, 느시",
+            "image": null
+        },
+        {
+            "text": "까막딱따구리(암컷), 참새",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1174,
+    "question": "다음 중 수렵 불가능한 야생동물로만 짝지어진 것은?",
+    "options": [
+        {
+            "text": "청설모, 멧돼지",
+            "image": null
+        },
+        {
+            "text": "스라소니, 고라니",
+            "image": null
+        },
+        {
+            "text": "스라소니, 반달가슴곰",
+            "image": null
+        },
+        {
+            "text": "고라니, 멧돼지",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1175,
+    "question": "다음 중 수렵 불가능한 야생동물로만 짝지어진 것은?",
+    "options": [
+        {
+            "text": "멧비둘기, 떼까마귀",
+            "image": null
+        },
+        {
+            "text": "흰이마기러기, 쇠오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "팔색조, 큰덤불해오라기(암컷)",
+            "image": null
+        },
+        {
+            "text": "검은머리촉새, 까치",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1176,
+    "question": "다음 수렵 동물 중 우리나라 텃새로만 묶여 진 것은?",
+    "options": [
+        {
+            "text": "멧비둘기, 검독수리",
+            "image": null
+        },
+        {
+            "text": "고방오리(암컷), 까치",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(수컷), 쇠오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "고니, 팔색조",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1177,
+    "question": "다음 중 환경부 장관이 고시한 멸종위기 야생생물이 아닌 것만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "호랑이, 고라니",
+            "image": null
+        },
+        {
+            "text": "늑대, 표범",
+            "image": null
+        },
+        {
+            "text": "고라니, 청설모",
+            "image": null
+        },
+        {
+            "text": "담비, 반달가슴곰",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1178,
+    "question": "다음 중 환경부 장관이 고시한 멸종위기 야생생물이 아닌 것만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "떼까마귀, 호사비오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "죽지수리, 항라머리검독수리",
+            "image": null
+        },
+        {
+            "text": "김점박이올빼미, 솔개",
+            "image": null
+        },
+        {
+            "text": "떼까마귀, 고방오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1179,
+    "question": "다음 중 환경부 장관이 고시한 멸종위기 야생생물이 아닌 것만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "멧비둘기, 참수리",
+            "image": null
+        },
+        {
+            "text": "까마귀, 쇠오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "개리, 고방오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "참수리, 개리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 1
+},
+{
+    "id": 1180,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 조류가 아닌 것만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "노랑부리백로(여름), 넓적부리도요",
+            "image": null
+        },
+        {
+            "text": "크낙새(수컷), 청둥오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "저어새, 참수리",
+            "image": null
+        },
+        {
+            "text": "참새, 떼까마귀",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1181,
+    "question": "다음 중 수렵 가능한 야생동물로만 묶여있는 것은?",
+    "options": [
+        {
+            "text": "저어새(겨울), 어치",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(수컷), 따오기(수컷)",
+            "image": null
+        },
+        {
+            "text": "흰목물떼새, 크낙새(암컷)",
+            "image": null
+        },
+        {
+            "text": "어치, 홍머리오리(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1182,
+    "question": "다음 중 수렵 가능한 포유류로만 묶여있는 것은?",
+    "options": [
+        {
+            "text": "멧돼지, 늑대",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로, 매",
+            "image": null
+        },
+        {
+            "text": "스라소니, 여우",
+            "image": null
+        },
+        {
+            "text": "멧돼지, 고라니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1183,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 동물만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "늑대, 쇠오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "꿩(수컷), 호랑이",
+            "image": null
+        },
+        {
+            "text": "스라소니, 고방오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "늑대, 스라소니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1184,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 동물만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "두루미, 떼까마귀",
+            "image": null
+        },
+        {
+            "text": "어치, 청둥오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "참수리, 갈까마귀(수컷)",
+            "image": null
+        },
+        {
+            "text": "두루미, 흑고니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1185,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 포유류가 아닌 것으로만 묶여있는 것은?",
+    "options": [
+        {
+            "text": "담비, 멧돼지",
+            "image": null
+        },
+        {
+            "text": "무산쇠족제비, 물개",
+            "image": null
+        },
+        {
+            "text": "삵, 물범",
+            "image": null
+        },
+        {
+            "text": "청설모, 고라니",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1186,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "검은머리갈매기, 꿩(암컷)지",
+            "image": null
+        },
+        {
+            "text": "검은머리촉새(암컷), 까마귀",
+            "image": null
+        },
+        {
+            "text": "고대갈매기, 까막딱따구리",
+            "image": null
+        },
+        {
+            "text": "꿩(암컷), 쇠오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1187,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "긴꼬리딱새, 청둥오리(암컷)",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(암컷), 뜸부기(암컷)",
+            "image": null
+        },
+        {
+            "text": "고방오리(수컷), 무당새",
+            "image": null
+        },
+        {
+            "text": "홍머리오리(암컷), 고방오리(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1188,
+    "question": "다음 중 멸종위기 야생생물 II급으로 지정된 조류가 아닌 것만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "벌매(수컷), 까치",
+            "image": null
+        },
+        {
+            "text": "어치, 뿔종다리",
+            "image": null
+        },
+        {
+            "text": "새매, 섬개개비",
+            "image": null
+        },
+        {
+            "text": "어치, 꿩(수컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1189,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 동물 종으로만 묶여있는 것은?",
+    "options": [
+        {
+            "text": "너구리, 호랑이",
+            "image": null
+        },
+        {
+            "text": "멧토끼, 대륙사슴(암컷)",
+            "image": null
+        },
+        {
+            "text": "오소리, 여우",
+            "image": null
+        },
+        {
+            "text": "대륙사슴(암컷), 여우",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1190,
+    "question": "다음 중 멸종위기 야생생물 I급으로 지정된 동물만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "수달, 너구리",
+            "image": null
+        },
+        {
+            "text": "반달가슴곰, 오소리",
+            "image": null
+        },
+        {
+            "text": "족제비, 꿩(암컷)",
+            "image": null
+        },
+        {
+            "text": "수달, 반달가슴곰",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1191,
+    "question": "다음 중 멸종위기 야생생물 I, II급 종으로 지정된 동물로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "여우(I급), 대륙사슴(암컷)(I급).",
+            "image": null
+        },
+        {
+            "text": "담비(II급), 하늘다람쥐(II급)",
+            "image": null
+        },
+        {
+            "text": "늑대(I급), 수달(I급)",
+            "image": null
+        },
+        {
+            "text": "대륙사슴(암컷)(I급), 물범(II급)",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1192,
+    "question": "다음 중 천연기념물로만 묶여있는 동물은?",
+    "options": [
+        {
+            "text": "하늘다람쥐, 사향노루",
+            "image": null
+        },
+        {
+            "text": "멧돼지, 반달가슴곰",
+            "image": null
+        },
+        {
+            "text": "고라니, 산양",
+            "image": null
+        },
+        {
+            "text": "고라니, 붉은박쥐",
+            "image": null
+        }
+    ],
+    "correctAnswer": 0
+},
+{
+    "id": 1193,
+    "question": "다음 중 천연기념물 조류만으로 묶여있는 것은?",
+    "options": [
+        {
+            "text": "쇠오리(암컷), 노랑부리백로(겨울)",
+            "image": null
+        },
+        {
+            "text": "흰꼬리수리, 흰뺨검둥오리",
+            "image": null
+        },
+        {
+            "text": "알락개구리매(암컷), 꿩(암컷)",
+            "image": null
+        },
+        {
+            "text": "노랑부리백로(겨울), 흰꼬리수리",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1194,
+    "question": "다음 중 「야생동물 보호 및 관리에 관한 법률」 제9조 1항에 따라 먹는 것이 금지된 야생생물 포유류 (13종)에 속한 것이 모두 아닌 것은?",
+    "options": [
+        {
+            "text": "오소리, 멧돼지",
+            "image": null
+        },
+        {
+            "text": "청설모, 삵",
+            "image": null
+        },
+        {
+            "text": "너구리, 수달",
+            "image": null
+        },
+        {
+            "text": "청설모, 하늘다람쥐",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1195,
+    "question": "다음 중 「야생동물 보호 및 관리에 관한 법률」 제9조 1항에 따라 먹는 것이 금지된 야생생물 포유류(13종) 및 조류(9종)에 속한 것이 모두 아닌 것은?",
+    "options": [
+        {
+            "text": "물개, 참새",
+            "image": null
+        },
+        {
+            "text": "산양, 청둥오리(수컷)",
+            "image": null
+        },
+        {
+            "text": "고방오리(수컷), 담비",
+            "image": null
+        },
+        {
+            "text": "어치, 까치",
+            "image": null
+        }
+    ],
+    "correctAnswer": 3
+},
+{
+    "id": 1196,
+    "question": "다음 중 분묘를 훼손하거나 전력시설에 피해를 주는 등의 사유로 유해 야생동물로 지정된 동물은?",
+    "options": [
+        {
+            "text": "오소리, 참새",
+            "image": null
+        },
+        {
+            "text": "너구리, 어치",
+            "image": null
+        },
+        {
+            "text": "멧돼지, 까치",
+            "image": null
+        },
+        {
+            "text": "멧토끼, 멧비둘기",
+            "image": null
+        }
+    ],
+    "correctAnswer": 2
+},
+{
+    "id": 1197,
+    "question": "다음 중 개체수의 급감 또는 절멸로 복원을 시도 중인 종으로 묶인 것은?",
+    "options": [
+        {
+            "text": "반달가슴곰, 매",
+            "image": null
+        },
+        {
+            "text": "무당새, 멧비둘기",
+            "image": null
+        },
+        {
+            "text": "따오기(암컷), 반달가슴곰",
+            "image": null
+        },
+        {
+            "text": "황새, 쇠오리(암컷)",
+            "image": null
+        }
+    ],
+    "correctAnswer": ㅈ
 }
 ]
