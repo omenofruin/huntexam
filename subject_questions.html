@@ -111,7 +111,6 @@
             background-color: #636363;
         }
     </style>
-    </style>
 </head>
 <body>
 
@@ -168,7 +167,7 @@
         } else if (subjectId === 2) {
             filteredQuestions = allQuestions.filter(q => q.id >= 612 && q.id <= 1208); // 과목 2 문제
         } else if (subjectId === 3) {
-            filteredQuestions = allQuestions.filter(q => q.id >= 1208); // 과목 3 문제
+            filteredQuestions = allQuestions.filter(q => q.id >= 1209); // 과목 3 문제
         }
 
         // 선택된 과목의 문제를 표시
@@ -186,6 +185,7 @@
                 imageHtml = `<div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
             }
 
+            // 각 옵션이 문자열인지 객체인지 확인 후 출력
             questionDiv.innerHTML = `
                 <h2>문제 ${index + 1}: ${q.question}</h2>
                 ${imageHtml}
@@ -193,7 +193,7 @@
                     ${q.options.map((option, i) => `
                         <label>
                             <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
-                            ${option}
+                            ${typeof option === 'object' ? option.text : option}
                         </label>
                     `).join('')}
                 </div>
