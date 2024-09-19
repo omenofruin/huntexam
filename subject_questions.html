@@ -209,12 +209,12 @@
         });
     }
 
-    // 정답 확인 함수
+// 정답 확인 함수 (단일 정답 처리)
     function checkAnswer(questionIndex, selectedOption) {
         const resultDiv = document.getElementById(`result${questionIndex}`);
         const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 정답 확인
-    
-        if ((selectedOption + 1) === correctAnswer) {  // selectedOption에 +1을 추가
+
+        if (selectedOption === correctAnswer) {
             resultDiv.textContent = "정답입니다!";
             resultDiv.className = "result correct";
         } else {
@@ -222,6 +222,7 @@
             resultDiv.className = "result incorrect";
         }
     }
+
 
     // 페이지 맨 위로 스크롤하는 함수
     function scrollToTop() {
