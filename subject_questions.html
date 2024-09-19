@@ -191,7 +191,7 @@
 
             // 각 옵션이 문자열인지 객체인지 확인 후 출력
             questionDiv.innerHTML = `
-                <h2>문제 ${index + 1}: ${q.question}</h2>
+                <h2>문제 ${q.id}: ${q.question}</h2>
                 ${imageHtml}
                 <div class="options">
                     ${q.options.map((option, i) => `
@@ -223,8 +223,7 @@
 
         const correctAnswer = currentQuestion.correctAnswer;  // JSON에서 불러온 정답
 
-        // selectedOption이 0 기반이므로 correctAnswer가 1 기반이면 +1
-        if (selectedOption + 1 === correctAnswer) {
+        if (selectedOption === correctAnswer) {
             resultDiv.textContent = "정답입니다!";
             resultDiv.className = "result correct";
         } else {
