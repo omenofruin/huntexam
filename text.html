@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실전 모의고사 - hunterexam</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/omenofruin/huntexam/main/image/favicon.ico">
+    <style>
+        @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+        body {
+            font-family: 'Pretendard-Regular', Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        .question-block {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .options label {
+            display: block;
+            margin: 10px 0;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .submit-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            background-color: #000;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #636363;
+        }
+        .score-section {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .score-passed {
+            color: green;
+        }
+        .score-failed {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>실전 모의고사</h1>
+    <div id="question-container"></div>
+    <button class="submit-button" onclick="submitExam()">시험 제출</button>
+    <div id="score-section" class="score-section"></div>
+</div>
+
+<script>
+    const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
+    let allQuestions = [];
+    const numQuestionsPerSubject = 20; // 각 과목에서 20문제씩
+    const totalSubjects = 4; // 총 4과목
+
+    // JSON 데이터 불러오기
+    fetch(jsonUrl)
+        .then(response => response.json())
+        .then(data => {
+            allQuestions = data;
+            loadExamQuestions();
+        })
+        .catch(error => console.error('Error fetching the question data:', error));
+
+    // 실전 모의고사 문제 로드
+    function loadExamQuestions() {
+        const questionContainer = document.getElementById('question-container');
+        questionContainer.innerHTML = '';  // 기존 내용을 비우기
+
+        for (let subjectId = 1; subjectId <= totalSubjects; subjectId++) {
+            const subjectQuestions = getRandomQuestionsBySubject(subjectId, numQuestionsPerSubject);
+            subjectQuestions.forEach((q, index) => {
+                const questionBlock = document.createElement('div');
+                questionBlock.className = 'question-block';
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+
+                let imageHtml = '';
+                if (q.image) {
+                    imageHtml = `<div class="image-container"><img src="${q.image}" alt="문제 이미지"></div>`;
+                }
+
+                questionDiv.innerHTML = `
+                    <h2>문제: ${q.question}</h2>
+                    ${imageHtml}
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <label>
+                                <input type="radio" name="question${q.id}" value="${i}"> 
+                                ${option.text ? option.text : option}
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                questionBlock.appendChild(questionDiv);
+                questionContainer.appendChild(questionBlock);
+            });
+        }
+    }
+
+    // 각 과목에서 랜덤으로 20문제 선택
+    function getRandomQuestionsBySubject(subjectId, numQuestions) {
+        const filteredQuestions = allQuestions.filter(q => q.id >= (subjectId - 1) * 611 && q.id <= subjectId * 611);
+        return shuffleArray(filteredQuestions).slice(0, numQuestions);
+    }
+
+    // 배열 섞기 함수
+    function shuffleArray(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    // 시험 제출 함수
+    function submitExam() {
+        const totalQuestions = numQuestionsPerSubject * totalSubjects;
+        let totalScore = 0;
+        let subjectScores = [0, 0, 0, 0];
+
+        // 각 질문별 정답 확인
+        allQuestions.forEach((q, index) => {
+            const selectedOption = document.querySelector(`input[name="question${q.id}"]:checked`);
+            if (selectedOption && parseInt(selectedOption.value) === q.correctAnswer) {
+                const subjectIndex = Math.floor(index / numQuestionsPerSubject);
+                subjectScores[subjectIndex] += 2; // 각 문제 2점
+                totalScore += 2;
+            }
+        });
+
+        const averageScore = totalScore / totalQuestions * 100;
+        const passedSubjects = subjectScores.filter(score => score >= 40).length;
+        const passedOverall = averageScore >= 60;
+
+        const scoreSection = document.getElementById('score-section');
+        scoreSection.innerHTML = `
+            과목별 점수: ${subjectScores.join(' / ')} <br>
+            평균 점수: ${averageScore.toFixed(2)}점
+        `;
+        if (passedOverall && passedSubjects === totalSubjects) {
+            scoreSection.innerHTML += `<div class="score-passed">합격입니다!</div>`;
+        } else {
+            scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
+        }
+    }
+</script>
+
+</body>
+</html>
