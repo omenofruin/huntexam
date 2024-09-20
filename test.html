@@ -140,7 +140,7 @@
 
         for (let subjectId = 1; subjectId <= totalSubjects; subjectId++) {
             const subjectQuestions = getRandomQuestionsBySubject(subjectId, numQuestionsPerSubject);
-            subjectQuestions.forEach((q) => {
+            subjectQuestions.forEach((q, index) => {
                 const questionBlock = document.createElement('div');
                 questionBlock.className = 'question-block';
                 const questionDiv = document.createElement('div');
@@ -157,7 +157,7 @@
                     <div class="options">
                         ${q.options.map((option, i) => `
                             <label>
-                                <input type="radio" name="question${q.id}" value="${i}">
+                                <input type="radio" name="question${questionNumber}" value="${i}">
                                 ${typeof option === 'object' ? option.text : option}
                             </label>
                         `).join('')}
@@ -196,81 +196,59 @@
 
     // 시험 제출 함수
     function submitExam() {
-        const totalQuestions = numQuestionsPerSubject * totalSubjects;
+        const questionBlocks = document.querySelectorAll('.question-block');
         let allSelected = true;
+        let totalScore = 0;
+        let subjectScores = [0, 0, 0, 0]; // 과목별 점수
+        const totalQuestions = numQuestionsPerSubject * totalSubjects;
 
         // 모든 문제를 선택했는지 확인
-        for (let i = 1; i <= totalQuestions; i++) {
-            const questionGroup = document.querySelector(`input[name="question${i}"]:checked`);
-            if (!questionGroup) {
+        questionBlocks.forEach((questionBlock, index) => {
+            const questionId = `question${index + 1}`;
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            if (!selectedOption) {
                 allSelected = false;
-                break;
             }
-        }
+        });
 
         if (!allSelected) {
             alert("모든 문제를 선택해야 제출할 수 있습니다.");
             return;
         }
 
-        let totalScore = 0;
-        let subjectScores = [0, 0, 0, 0];
+        // 각 질문별 정답 확인
+        questionBlocks.forEach((questionBlock, index) => {
+            const questionId = `question${index + 1}`;
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
 
-function submitExam() {
-    const questionBlocks = document.querySelectorAll('.question-block');
-    let allSelected = true;
+            const correctAnswer = allQuestions[index].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
 
-    // 모든 문제를 선택했는지 확인
-    questionBlocks.forEach((questionBlock, index) => {
-        const questionId = `question${index + 1}`;
-        const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
-        if (!selectedOption) {
-            allSelected = false;
+            if (selectedOption && parseInt(selectedOption.value) === correctAnswer) {
+                const subjectIndex = Math.floor(index / numQuestionsPerSubject);
+                subjectScores[subjectIndex] += 2; // 각 문제는 2점
+                totalScore += 2;
+            }
+        });
+
+        const averageScore = (totalScore / (numQuestionsPerSubject * totalSubjects)) * 100;
+        const passedSubjects = subjectScores.filter(score => score >= 40).length;
+        const passedOverall = averageScore >= 60;
+
+        const scoreSection = document.getElementById('score-section');
+        scoreSection.innerHTML = `
+            과목별 점수: ${subjectScores.join(' / ')} <br>
+            평균 점수: ${averageScore.toFixed(2)}점
+        `;
+        if (passedOverall && passedSubjects === totalSubjects) {
+            scoreSection.innerHTML += `<div class="score-passed">합격입니다!</div>`;
+        } else {
+            scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
         }
-    });
 
-    if (!allSelected) {
-        alert("모든 문제를 선택해야 제출할 수 있습니다.");
-        return;
+        // 제출 후 문제 화면 숨기기
+        document.getElementById('question-container').innerHTML = '';
+        document.querySelector('.submit-button').style.display = 'none';
     }
-
-    let totalScore = 0;
-    let subjectScores = [0, 0, 0, 0]; // 과목별 점수
-
-    // 각 질문별 정답 확인
-    questionBlocks.forEach((questionBlock, index) => {
-        const questionId = `question${index + 1}`;
-        const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
-
-        const correctAnswer = allQuestions[index].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
-
-        if (selectedOption && parseInt(selectedOption.value) === correctAnswer) {
-            const subjectIndex = Math.floor(index / numQuestionsPerSubject);
-            subjectScores[subjectIndex] += 2; // 각 문제는 2점
-            totalScore += 2;
-        }
-    });
-
-    const averageScore = (totalScore / (numQuestionsPerSubject * totalSubjects)) * 100;
-    const passedSubjects = subjectScores.filter(score => score >= 40).length;
-    const passedOverall = averageScore >= 60;
-
-    const scoreSection = document.getElementById('score-section');
-    scoreSection.innerHTML = `
-        과목별 점수: ${subjectScores.join(' / ')} <br>
-        평균 점수: ${averageScore.toFixed(2)}점
-    `;
-    if (passedOverall && passedSubjects === totalSubjects) {
-        scoreSection.innerHTML += `<div class="score-passed">합격입니다!</div>`;
-    } else {
-        scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
-    }
-
-    // 제출 후 문제 화면 숨기기
-    document.getElementById('question-container').innerHTML = '';
-    document.querySelector('.submit-button').style.display = 'none';
-}
-
 
     // 타이머 함수 (100분 카운트다운)
     function startTimer(duration) {
