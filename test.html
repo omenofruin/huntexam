@@ -28,6 +28,28 @@
             color: #333;
             text-align: center;
         }
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .button-group button {
+            width: 100%;
+            max-width: 400px;
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button-group button:hover {
+            background-color: #636363;
+        }
         .question-block {
             margin-bottom: 20px;
             padding: 20px;
@@ -52,31 +74,44 @@
         .incorrect {
             color: red;
         }
-        .submit-button {
-            display: block;
-            margin: 20px auto;
-            padding: 15px 30px;
+        .fixed-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .fixed-button {
             background-color: #000;
             color: white;
             border: none;
-            font-size: 18px;
+            padding: 15px 20px;
+            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-        .submit-button:hover {
+        .fixed-button:hover {
             background-color: #636363;
         }
-        .score-section {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 1.5em;
-            font-weight: bold;
+        .left-fixed-button-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
         }
-        .score-passed {
-            color: green;
+        .left-fixed-button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
-        .score-failed {
-            color: red;
+        .left-fixed-button:hover {
+            background-color: #636363;
         }
     </style>
 </head>
@@ -84,107 +119,147 @@
 
 <div class="container">
     <h1>실전 모의고사</h1>
+    <!-- 1종, 2종 선택 버튼 추가 -->
+    <div class="button-group">
+        <button onclick="setExamType('1종')">1종 선택</button>
+        <button onclick="setExamType('2종')">2종 선택</button>
+    </div>
+
+    <!-- 과목별 문제 선택 버튼 -->
+    <div class="button-group">
+        <button onclick="loadQuestions(1)">과목 1: 수렵에 관한 법령 및 절차</button>
+        <button onclick="loadQuestions(2)">과목 2: 야생동물의 보호·관리에 관한 사항</button>
+        <button id="subject3-btn" onclick="loadQuestions(3)">과목 3-1: 수렵도구(제1종) 사용법</button>
+        <button onclick="loadQuestions(5)">과목 4: 안전사고의 예방 및 응급조치에 관한 사항</button>
+    </div>
+
+    <!-- 문제를 표시할 영역 -->
     <div id="question-container"></div>
-    <button class="submit-button" onclick="submitExam()">시험 제출</button>
-    <div id="score-section" class="score-section"></div>
 </div>
 
+<!-- 고정된 버튼 (맨 위로, 맨 아래로, 이전 화면) -->
+<div class="fixed-button-container">
+    <button class="fixed-button" onclick="scrollToTop()">맨 위로</button>
+    <button class="fixed-button" onclick="scrollToBottom()">맨 아래로</button>
+</div>
+
+<!-- 왼쪽 고정 버튼 -->
+<div class="left-fixed-button-container">
+    <button class="left-fixed-button" onclick="goBack()">이전 화면</button>
+</div>
+    
 <script>
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
     let allQuestions = [];
-    const numQuestionsPerSubject = 20; // 각 과목에서 20문제씩
-    const totalSubjects = 4; // 총 4과목
-    let selectedQuestions = []; // 선택된 문제들
+    let examType = '1종'; // 기본값 1종
 
     // JSON 데이터 불러오기
     fetch(jsonUrl)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
-            allQuestions = data;
-            loadExamQuestions();
+            allQuestions = data;  // 모든 문제 데이터를 저장
         })
         .catch(error => console.error('Error fetching the question data:', error));
 
-    // 실전 모의고사 문제 로드
-    function loadExamQuestions() {
+    // 1종, 2종 선택에 따라 과목 3 이름 변경
+    function setExamType(type) {
+        examType = type;
+        const subject3Btn = document.getElementById('subject3-btn');
+        if (examType === '1종') {
+            subject3Btn.textContent = '과목 3-1: 수렵도구(제1종) 사용법';
+        } else {
+            subject3Btn.textContent = '과목 3-2: 수렵도구(제2종) 사용법';
+        }
+    }
+
+    // 과목별로 문제를 로드하는 함수
+    function loadQuestions(subjectId) {
         const questionContainer = document.getElementById('question-container');
         questionContainer.innerHTML = '';  // 기존 내용을 비우기
-        selectedQuestions = [];
 
-        for (let subjectId = 1; subjectId <= totalSubjects; subjectId++) {
-            const subjectQuestions = getRandomQuestionsBySubject(subjectId, numQuestionsPerSubject);
-            selectedQuestions = selectedQuestions.concat(subjectQuestions);
+        let filteredQuestions = [];
+        if (subjectId === 1) {
+            filteredQuestions = allQuestions.filter(q => q.id >= 1 && q.id <= 611); // 과목 1 문제
+        } else if (subjectId === 2) {
+            filteredQuestions = allQuestions.filter(q => q.id >= 612 && q.id <= 1208); // 과목 2 문제
+        } else if (subjectId === 3) {
+            // 1종, 2종에 따라 다른 과목 3 로드
+            if (examType === '1종') {
+                filteredQuestions = allQuestions.filter(q => q.id >= 1209 && q.id <= 1639); // 과목 3-1 문제
+            } else {
+                filteredQuestions = allQuestions.filter(q => q.id >= 1640 && q.id <= 1800); // 과목 3-2 문제
+            }
+        } else if (subjectId === 5) {
+            filteredQuestions = allQuestions.filter(q => q.id >= 1801 && q.id <= 2000); // 과목 4 문제
         }
 
-        selectedQuestions.forEach((q, index) => {
+        // 선택된 과목의 문제를 표시
+        filteredQuestions.forEach((q, index) => {
             const questionBlock = document.createElement('div');
             questionBlock.className = 'question-block';
+
             const questionDiv = document.createElement('div');
             questionDiv.className = 'question';
-
+            
+            // 이미지가 있으면 HTML로 추가
             let imageHtml = '';
             if (q.image) {
-                imageHtml = `<div class="image-container"><img src="${q.image}" alt="문제 이미지"></div>`;
+                const images = Array.isArray(q.image) ? q.image : [q.image];
+                imageHtml = `<div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
             }
 
+            // 각 옵션이 문자열인지 객체인지 확인 후 출력
             questionDiv.innerHTML = `
                 <h2>문제 ${index + 1}: ${q.question}</h2>
                 ${imageHtml}
                 <div class="options">
                     ${q.options.map((option, i) => `
                         <label>
-                            <input type="radio" name="question${q.id}" value="${i}"> 
+                            <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
                             ${typeof option === 'object' ? option.text : option}
                         </label>
                     `).join('')}
                 </div>
+                <div id="result${index}" class="result"></div>
             `;
+
             questionBlock.appendChild(questionDiv);
             questionContainer.appendChild(questionBlock);
         });
     }
 
-    // 각 과목에서 랜덤으로 20문제 선택
-    function getRandomQuestionsBySubject(subjectId, numQuestions) {
-        const filteredQuestions = allQuestions.filter(q => q.id >= (subjectId - 1) * 611 && q.id < subjectId * 611);
-        return shuffleArray(filteredQuestions).slice(0, numQuestions);
-    }
+    // 정답 확인 함수
+    function checkAnswer(questionIndex, selectedOption) {
+        const resultDiv = document.getElementById(`result${questionIndex}`);
+        const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 정답 확인
 
-    // 배열 섞기 함수
-    function shuffleArray(array) {
-        return array.sort(() => Math.random() - 0.5);
-    }
-
-    // 시험 제출 함수
-    function submitExam() {
-        const totalQuestions = numQuestionsPerSubject * totalSubjects;
-        let totalScore = 0;
-        let subjectScores = [0, 0, 0, 0];
-
-        // 각 질문별 정답 확인
-        selectedQuestions.forEach((q, index) => {
-            const selectedOption = document.querySelector(`input[name="question${q.id}"]:checked`);
-            if (selectedOption && parseInt(selectedOption.value) === q.correctAnswer) {
-                const subjectIndex = Math.floor(index / numQuestionsPerSubject);
-                subjectScores[subjectIndex] += 2; // 각 문제 2점
-                totalScore += 2;
-            }
-        });
-
-        const averageScore = totalScore / totalQuestions * 100;
-        const passedSubjects = subjectScores.filter(score => score >= 40).length;
-        const passedOverall = averageScore >= 60;
-
-        const scoreSection = document.getElementById('score-section');
-        scoreSection.innerHTML = `
-            과목별 점수: ${subjectScores.join(' / ')} <br>
-            평균 점수: ${averageScore.toFixed(2)}점
-        `;
-        if (passedOverall && passedSubjects === totalSubjects) {
-            scoreSection.innerHTML += `<div class="score-passed">합격입니다!</div>`;
+        if (selectedOption === correctAnswer) {
+            resultDiv.textContent = "정답입니다!";
+            resultDiv.className = "result correct";
         } else {
-            scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
+            resultDiv.textContent = `오답입니다.`;
+            resultDiv.className = "result incorrect";
         }
+    }
+
+    // 페이지 맨 위로 스크롤하는 함수
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 페이지 맨 아래로 스크롤하는 함수
+    function scrollToBottom() {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    // 이전 화면으로 돌아가는 함수
+    function goBack() {
+        window.history.back();
     }
 </script>
 
