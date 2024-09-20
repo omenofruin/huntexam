@@ -42,16 +42,6 @@
             display: block;
             margin: 10px 0;
         }
-        .result {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-        .correct {
-            color: green;
-        }
-        .incorrect {
-            color: red;
-        }
         .submit-button {
             display: block;
             margin: 20px auto;
@@ -96,6 +86,12 @@
         .button-group button:hover {
             background-color: #636363;
         }
+        #timer {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -106,6 +102,7 @@
         <button onclick="startExam('1종')">1종 수렵면허 모의고사</button>
         <button onclick="startExam('2종')">2종 수렵면허 모의고사</button>
     </div>
+    <div id="timer"></div>
     <div id="question-container"></div>
     <button class="submit-button" onclick="submitExam()" style="display:none;">시험 제출</button>
     <div id="score-section" class="score-section"></div>
@@ -129,7 +126,9 @@
     // 1종, 2종에 따라 시험 시작
     function startExam(examType) {
         selectedExamType = examType;
-        document.querySelector('.submit-button').style.display = 'block';
+        document.querySelector('.button-group').style.display = 'none'; // 버튼 숨기기
+        document.querySelector('.submit-button').style.display = 'block'; // 제출 버튼 표시
+        startTimer(6000); // 100분 타이머 시작 (100분 = 6000초)
         loadExamQuestions();
     }
 
@@ -137,6 +136,7 @@
     function loadExamQuestions() {
         const questionContainer = document.getElementById('question-container');
         questionContainer.innerHTML = '';  // 기존 내용을 비우기
+        let questionNumber = 1;
 
         for (let subjectId = 1; subjectId <= totalSubjects; subjectId++) {
             const subjectQuestions = getRandomQuestionsBySubject(subjectId, numQuestionsPerSubject);
@@ -147,7 +147,7 @@
                 questionDiv.className = 'question';
 
                 questionDiv.innerHTML = `
-                    <h2>문제 ${q.id}: ${q.question}</h2>
+                    <h2>문제 ${questionNumber}: ${q.question}</h2>
                     <div class="options">
                         ${q.options.map((option, i) => `
                             <label>
@@ -159,6 +159,7 @@
                 `;
                 questionBlock.appendChild(questionDiv);
                 questionContainer.appendChild(questionBlock);
+                questionNumber++;
             });
         }
     }
@@ -217,6 +218,24 @@
         } else {
             scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
         }
+    }
+
+    // 100분 타이머 함수
+    function startTimer(duration) {
+        const timerElement = document.getElementById('timer');
+        let time = duration;
+        const countdown = setInterval(() => {
+            const minutes = Math.floor(time / 60);
+            const seconds = time % 60;
+            timerElement.innerHTML = `남은 시간: ${minutes}분 ${seconds < 10 ? '0' : ''}${seconds}초`;
+
+            if (time <= 0) {
+                clearInterval(countdown);
+                alert('시간이 종료되었습니다. 시험을 제출합니다.');
+                submitExam();
+            }
+            time--;
+        }, 1000);
     }
 </script>
 
