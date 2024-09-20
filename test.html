@@ -162,6 +162,33 @@
     <div id="score-section" class="score-section"></div>
 </div>
 
+<!-- 왼쪽 고정 버튼 -->
+<div class="left-fixed-button-container">
+    <button class="left-fixed-button" onclick="goBack()">이전 화면</button>
+</div>
+
+<!-- 오른쪽 고정 버튼 -->
+<div class="fixed-button-container">
+    <button class="fixed-button" onclick="resetPage()">초기화</button>
+    <button class="scroll-button" onclick="scrollToTop()">맨 위로</button>
+    <button class="scroll-button" onclick="scrollToBottom()">맨 아래로</button>
+</div>
+
+    <!-- 문제를 표시할 영역 -->
+    <div id="question-container"></div>
+</div>
+
+<!-- 고정된 버튼 (맨 위로, 맨 아래로, 이전 화면) -->
+<div class="fixed-button-container">
+    <button class="fixed-button" onclick="scrollToTop()">맨 위로</button>
+    <button class="fixed-button" onclick="scrollToBottom()">맨 아래로</button>
+</div>
+
+<!-- 왼쪽 고정 버튼 -->
+<div class="left-fixed-button-container">
+    <button class="left-fixed-button" onclick="goBack()">이전 화면</button>
+</div>
+    
 <script>
     const jsonUrl = 'questions.json'; // JSON 파일 경로
     let allQuestions = [];
