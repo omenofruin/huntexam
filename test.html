@@ -146,13 +146,19 @@
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
 
+                let imageHtml = '';
+                if (q.image) {
+                    imageHtml = `<div class="image-container"><img src="${q.image}" alt="문제 이미지"></div>`;
+                }
+
                 questionDiv.innerHTML = `
                     <h2>문제 ${questionNumber}: ${q.question}</h2>
+                    ${imageHtml}
                     <div class="options">
                         ${q.options.map((option, i) => `
                             <label>
                                 <input type="radio" name="question${q.id}" value="${i}"> 
-                                ${option}
+                                ${typeof option === 'object' ? option.text : option}
                             </label>
                         `).join('')}
                     </div>
@@ -190,7 +196,14 @@
 
     // 시험 제출 함수
     function submitExam() {
+        // 모든 문제를 선택했는지 확인
         const totalQuestions = numQuestionsPerSubject * totalSubjects;
+        const unanswered = Array.from(document.querySelectorAll('input[type="radio"]')).filter(input => !input.checked);
+        if (unanswered.length > 0) {
+            alert("모든 문제를 선택해야 제출할 수 있습니다.");
+            return;
+        }
+
         let totalScore = 0;
         let subjectScores = [0, 0, 0, 0];
 
@@ -218,12 +231,16 @@
         } else {
             scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
         }
+
+        // 시험 제출 후 문제 화면을 없애고 결과만 표시
+        document.getElementById('question-container').innerHTML = '';
+        document.querySelector('.submit-button').style.display = 'none'; // 제출 버튼 숨기기
     }
 
-    // 100분 타이머 함수
+    // 타이머 함수 (100분 카운트다운)
     function startTimer(duration) {
-        const timerElement = document.getElementById('timer');
         let time = duration;
+        const timerElement = document.getElementById('timer');
         const countdown = setInterval(() => {
             const minutes = Math.floor(time / 60);
             const seconds = time % 60;
