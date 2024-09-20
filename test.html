@@ -120,6 +120,20 @@
         .left-fixed-button:hover {
             background-color: #636363;
         }
+        .submit-button {
+            margin: 20px auto;
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -137,6 +151,9 @@
 
     <!-- 문제를 표시할 영역 -->
     <div id="question-container"></div>
+    
+    <!-- 제출 버튼 -->
+    <button class="submit-button" id="submit-button" style="display:none" onclick="submitExam()">제출</button>
 </div>
 
 <!-- 고정된 버튼 (맨 위로, 맨 아래로, 이전 화면) -->
@@ -154,6 +171,7 @@
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
     let allQuestions = [];
     let examType = ''; // 선택된 시험 유형
+    let userAnswers = []; // 사용자 답변 저장용
 
     // JSON 데이터 불러오기
     fetch(jsonUrl)
@@ -182,7 +200,7 @@
             if (timerDuration < 0) {
                 clearInterval(timerInterval);
                 alert("시험 시간이 종료되었습니다.");
-                // 여기에 시험 종료 처리를 추가할 수 있습니다.
+                submitExam(); // 시간이 종료되면 자동으로 시험 제출
             }
         }, 1000);
     }
@@ -193,15 +211,23 @@
         document.getElementById('exam-type-buttons').style.display = 'none'; // 선택 후 버튼 숨기기
         loadQuestions();
         startTimer(); // 타이머 시작
+        document.getElementById('submit-button').style.display = 'block'; // 제출 버튼 표시
     }
 
     // 문제 로드 함수 (1종 또는 2종 선택 후)
     function loadQuestions() {
         const questionContainer = document.getElementById('question-container');
         questionContainer.innerHTML = '';  // 기존 내용을 비우기
+        userAnswers = []; // 초기화
 
         let filteredQuestions = [];
-        filteredQuestions = allQuestions.filter(q => q.examType === examType); // 1종 또는 2종에 맞는 문제만 가져오기
+        // 필터링된 문제는 실제 시험에 맞게 각 과목에서 20문제씩 가져오기
+        const subject1Questions = allQuestions.filter(q => q.subject === 1).slice(0, 20);
+        const subject2Questions = allQuestions.filter(q => q.subject === 2).slice(0, 20);
+        const subject3Questions = allQuestions.filter(q => q.subject === (examType === '1종' ? 3 : 4)).slice(0, 20);
+        const subject4Questions = allQuestions.filter(q => q.subject === 5).slice(0, 20);
+
+        filteredQuestions = [...subject1Questions, ...subject2Questions, ...subject3Questions, ...subject4Questions];
 
         // 선택된 문제를 표시
         filteredQuestions.forEach((q, index) => {
@@ -225,31 +251,41 @@
                 <div class="options">
                     ${q.options.map((option, i) => `
                         <label>
-                            <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})"> 
+                            <input type="radio" name="question${q.id}" value="${i}" onclick="saveAnswer(${q.id}, ${i})"> 
                             ${typeof option === 'object' ? option.text : option}
                         </label>
                     `).join('')}
                 </div>
-                <div id="result${index}" class="result"></div>
             `;
 
             questionBlock.appendChild(questionDiv);
             questionContainer.appendChild(questionBlock);
+
+            userAnswers.push({ questionId: q.id, selectedOption: null }); // 초기화
         });
     }
 
-    // 정답 확인 함수
-    function checkAnswer(questionIndex, selectedOption) {
-        const resultDiv = document.getElementById(`result${questionIndex}`);
-        const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 정답 확인
-
-        if (selectedOption === correctAnswer) {
-            resultDiv.textContent = "정답입니다!";
-            resultDiv.className = "result correct";
-        } else {
-            resultDiv.textContent = `오답입니다.`;
-            resultDiv.className = "result incorrect";
+    // 사용자가 선택한 답변 저장
+    function saveAnswer(questionId, selectedOption) {
+        const answer = userAnswers.find(a => a.questionId === questionId);
+        if (answer) {
+            answer.selectedOption = selectedOption;
         }
+    }
+
+    // 시험 제출 함수
+    function submitExam() {
+        let score = 0;
+        userAnswers.forEach(answer => {
+            const question = allQuestions.find(q => q.id === answer.questionId);
+            if (question && answer.selectedOption === question.correctAnswer) {
+                score++;
+            }
+        });
+
+        const percentage = (score / userAnswers.length) * 100;
+        alert(`총 점수: ${percentage}점`);
+        clearInterval(timerInterval); // 타이머 중지
     }
 
     // 페이지 맨 위로 스크롤하는 함수
