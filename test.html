@@ -237,39 +237,39 @@ function submitExam() {
     let totalScore = 0;
     let subjectScores = [0, 0, 0, 0]; // 과목별 점수
 
-        // 각 질문별 정답 확인
-        questionBlocks.forEach((questionBlock, index) => {
-            const questionId = `question${index + 1}`;
-            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
-    
-            const correctAnswer = allQuestions[index].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
-    
-            if (selectedOption && parseInt(selectedOption.value) === correctAnswer) {
-                const subjectIndex = Math.floor(index / numQuestionsPerSubject);
-                subjectScores[subjectIndex] += 2; // 각 문제는 2점
-                totalScore += 2;
-            }
-        });
-    
-        const averageScore = (totalScore / (numQuestionsPerSubject * totalSubjects)) * 100;
-        const passedSubjects = subjectScores.filter(score => score >= 40).length;
-        const passedOverall = averageScore >= 60;
-    
-        const scoreSection = document.getElementById('score-section');
-        scoreSection.innerHTML = `
-            과목별 점수: ${subjectScores.join(' / ')} <br>
-            평균 점수: ${averageScore.toFixed(2)}점
-        `;
-        if (passedOverall && passedSubjects === totalSubjects) {
-            scoreSection.innerHTML += `<div class="score-passed">합격입니다!</div>`;
-        } else {
-            scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
+    // 각 질문별 정답 확인
+    questionBlocks.forEach((questionBlock, index) => {
+        const questionId = `question${index + 1}`;
+        const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+
+        const correctAnswer = allQuestions[index].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
+
+        if (selectedOption && parseInt(selectedOption.value) === correctAnswer) {
+            const subjectIndex = Math.floor(index / numQuestionsPerSubject);
+            subjectScores[subjectIndex] += 2; // 각 문제는 2점
+            totalScore += 2;
         }
-    
-        // 제출 후 문제 화면 숨기기
-        document.getElementById('question-container').innerHTML = '';
-        document.querySelector('.submit-button').style.display = 'none';
+    });
+
+    const averageScore = (totalScore / (numQuestionsPerSubject * totalSubjects)) * 100;
+    const passedSubjects = subjectScores.filter(score => score >= 40).length;
+    const passedOverall = averageScore >= 60;
+
+    const scoreSection = document.getElementById('score-section');
+    scoreSection.innerHTML = `
+        과목별 점수: ${subjectScores.join(' / ')} <br>
+        평균 점수: ${averageScore.toFixed(2)}점
+    `;
+    if (passedOverall && passedSubjects === totalSubjects) {
+        scoreSection.innerHTML += `<div class="score-passed">합격입니다!</div>`;
+    } else {
+        scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
     }
+
+    // 제출 후 문제 화면 숨기기
+    document.getElementById('question-container').innerHTML = '';
+    document.querySelector('.submit-button').style.display = 'none';
+}
 
 
     // 타이머 함수 (100분 카운트다운)
