@@ -94,6 +94,7 @@
     let allQuestions = [];
     const numQuestionsPerSubject = 20; // 각 과목에서 20문제씩
     const totalSubjects = 4; // 총 4과목
+    let selectedQuestions = []; // 선택된 문제들
 
     // JSON 데이터 불러오기
     fetch(jsonUrl)
@@ -108,41 +109,44 @@
     function loadExamQuestions() {
         const questionContainer = document.getElementById('question-container');
         questionContainer.innerHTML = '';  // 기존 내용을 비우기
+        selectedQuestions = [];
 
         for (let subjectId = 1; subjectId <= totalSubjects; subjectId++) {
             const subjectQuestions = getRandomQuestionsBySubject(subjectId, numQuestionsPerSubject);
-            subjectQuestions.forEach((q, index) => {
-                const questionBlock = document.createElement('div');
-                questionBlock.className = 'question-block';
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-
-                let imageHtml = '';
-                if (q.image) {
-                    imageHtml = `<div class="image-container"><img src="${q.image}" alt="문제 이미지"></div>`;
-                }
-
-                questionDiv.innerHTML = `
-                    <h2>문제: ${q.question}</h2>
-                    ${imageHtml}
-                    <div class="options">
-                        ${q.options.map((option, i) => `
-                            <label>
-                                <input type="radio" name="question${q.id}" value="${i}"> 
-                                ${option.text ? option.text : option}
-                            </label>
-                        `).join('')}
-                    </div>
-                `;
-                questionBlock.appendChild(questionDiv);
-                questionContainer.appendChild(questionBlock);
-            });
+            selectedQuestions = selectedQuestions.concat(subjectQuestions);
         }
+
+        selectedQuestions.forEach((q, index) => {
+            const questionBlock = document.createElement('div');
+            questionBlock.className = 'question-block';
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+
+            let imageHtml = '';
+            if (q.image) {
+                imageHtml = `<div class="image-container"><img src="${q.image}" alt="문제 이미지"></div>`;
+            }
+
+            questionDiv.innerHTML = `
+                <h2>문제 ${index + 1}: ${q.question}</h2>
+                ${imageHtml}
+                <div class="options">
+                    ${q.options.map((option, i) => `
+                        <label>
+                            <input type="radio" name="question${q.id}" value="${i}"> 
+                            ${typeof option === 'object' ? option.text : option}
+                        </label>
+                    `).join('')}
+                </div>
+            `;
+            questionBlock.appendChild(questionDiv);
+            questionContainer.appendChild(questionBlock);
+        });
     }
 
     // 각 과목에서 랜덤으로 20문제 선택
     function getRandomQuestionsBySubject(subjectId, numQuestions) {
-        const filteredQuestions = allQuestions.filter(q => q.id >= (subjectId - 1) * 611 && q.id <= subjectId * 611);
+        const filteredQuestions = allQuestions.filter(q => q.id >= (subjectId - 1) * 611 && q.id < subjectId * 611);
         return shuffleArray(filteredQuestions).slice(0, numQuestions);
     }
 
@@ -158,7 +162,7 @@
         let subjectScores = [0, 0, 0, 0];
 
         // 각 질문별 정답 확인
-        allQuestions.forEach((q, index) => {
+        selectedQuestions.forEach((q, index) => {
             const selectedOption = document.querySelector(`input[name="question${q.id}"]:checked`);
             if (selectedOption && parseInt(selectedOption.value) === q.correctAnswer) {
                 const subjectIndex = Math.floor(index / numQuestionsPerSubject);
