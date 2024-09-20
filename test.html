@@ -216,20 +216,45 @@
         let totalScore = 0;
         let subjectScores = [0, 0, 0, 0];
 
+function submitExam() {
+    const questionBlocks = document.querySelectorAll('.question-block');
+    let allSelected = true;
+
+    // 모든 문제를 선택했는지 확인
+    questionBlocks.forEach((questionBlock, index) => {
+        const questionId = `question${index + 1}`;
+        const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+        if (!selectedOption) {
+            allSelected = false;
+        }
+    });
+
+    if (!allSelected) {
+        alert("모든 문제를 선택해야 제출할 수 있습니다.");
+        return;
+    }
+
+    let totalScore = 0;
+    let subjectScores = [0, 0, 0, 0]; // 과목별 점수
+
         // 각 질문별 정답 확인
-        allQuestions.forEach((q) => {
-            const selectedOption = document.querySelector(`input[name="question${q.id}"]:checked`);
-            if (selectedOption && parseInt(selectedOption.value) === q.correctAnswer) {
-                const subjectIndex = Math.floor(q.id / numQuestionsPerSubject);
-                subjectScores[subjectIndex] += 2; // 각 문제 2점
+        questionBlocks.forEach((questionBlock, index) => {
+            const questionId = `question${index + 1}`;
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+    
+            const correctAnswer = allQuestions[index].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
+    
+            if (selectedOption && parseInt(selectedOption.value) === correctAnswer) {
+                const subjectIndex = Math.floor(index / numQuestionsPerSubject);
+                subjectScores[subjectIndex] += 2; // 각 문제는 2점
                 totalScore += 2;
             }
         });
-
-        const averageScore = totalScore / totalQuestions * 100;
+    
+        const averageScore = (totalScore / (numQuestionsPerSubject * totalSubjects)) * 100;
         const passedSubjects = subjectScores.filter(score => score >= 40).length;
         const passedOverall = averageScore >= 60;
-
+    
         const scoreSection = document.getElementById('score-section');
         scoreSection.innerHTML = `
             과목별 점수: ${subjectScores.join(' / ')} <br>
@@ -240,11 +265,12 @@
         } else {
             scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
         }
-
-        // 시험 제출 후 문제 화면을 없애고 결과만 표시
+    
+        // 제출 후 문제 화면 숨기기
         document.getElementById('question-container').innerHTML = '';
-        document.querySelector('.submit-button').style.display = 'none'; // 제출 버튼 숨기기
+        document.querySelector('.submit-button').style.display = 'none';
     }
+
 
     // 타이머 함수 (100분 카운트다운)
     function startTimer(duration) {
