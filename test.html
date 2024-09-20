@@ -92,6 +92,60 @@
             font-weight: bold;
             margin-top: 20px;
         }
+        /* Fixed button style */
+        .fixed-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .fixed-button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .fixed-button:hover {
+            background-color: #636363;
+        }
+        .scroll-button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-button:hover {
+            background-color: #636363;
+        }
+        /* 왼쪽 고정 버튼 */
+        .left-fixed-button-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+        .left-fixed-button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .left-fixed-button:hover {
+            background-color: #636363;
+        }
     </style>
 </head>
 <body>
@@ -266,6 +320,25 @@
             }
             time--;
         }, 1000);
+    }
+    // 페이지 초기화 함수
+    function resetPage() {
+        location.reload();  // 페이지를 새로 고침합니다.
+    }
+
+    // 페이지 맨 위로 스크롤하는 함수
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 페이지 맨 아래로 스크롤하는 함수
+    function scrollToBottom() {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    // 이전 화면으로 돌아가는 함수
+    function goBack() {
+        window.history.back();
     }
 </script>
 
