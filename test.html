@@ -157,7 +157,7 @@
                     <div class="options">
                         ${q.options.map((option, i) => `
                             <label>
-                                <input type="radio" name="question${q.id}" value="${i}"> 
+                                <input type="radio" name="question${q.id}" value="${i}">
                                 ${typeof option === 'object' ? option.text : option}
                             </label>
                         `).join('')}
@@ -196,10 +196,19 @@
 
     // 시험 제출 함수
     function submitExam() {
-        // 모든 문제를 선택했는지 확인
         const totalQuestions = numQuestionsPerSubject * totalSubjects;
-        const unanswered = Array.from(document.querySelectorAll('input[type="radio"]')).filter(input => !input.checked);
-        if (unanswered.length > 0) {
+        let allSelected = true;
+
+        // 모든 문제를 선택했는지 확인
+        for (let i = 0; i < totalQuestions; i++) {
+            const questionGroup = document.querySelector(`input[name="question${i + 1}"]:checked`);
+            if (!questionGroup) {
+                allSelected = false;
+                break;
+            }
+        }
+
+        if (!allSelected) {
             alert("모든 문제를 선택해야 제출할 수 있습니다.");
             return;
         }
