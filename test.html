@@ -74,6 +74,13 @@
         .incorrect {
             color: red;
         }
+        .timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
         .fixed-button-container {
             position: fixed;
             bottom: 20px;
@@ -119,18 +126,13 @@
 
 <div class="container">
     <h1>실전 모의고사</h1>
+    <!-- 타이머 -->
+    <div class="timer" id="timer">100:00</div>
+    
     <!-- 1종, 2종 선택 버튼 추가 -->
-    <div class="button-group">
+    <div class="button-group" id="exam-type-buttons">
         <button onclick="setExamType('1종')">1종 선택</button>
         <button onclick="setExamType('2종')">2종 선택</button>
-    </div>
-
-    <!-- 과목별 문제 선택 버튼 -->
-    <div class="button-group">
-        <button onclick="loadQuestions(1)">과목 1: 수렵에 관한 법령 및 절차</button>
-        <button onclick="loadQuestions(2)">과목 2: 야생동물의 보호·관리에 관한 사항</button>
-        <button id="subject3-btn" onclick="loadQuestions(3)">과목 3-1: 수렵도구(제1종) 사용법</button>
-        <button onclick="loadQuestions(5)">과목 4: 안전사고의 예방 및 응급조치에 관한 사항</button>
     </div>
 
     <!-- 문제를 표시할 영역 -->
@@ -151,7 +153,7 @@
 <script>
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
     let allQuestions = [];
-    let examType = '1종'; // 기본값 1종
+    let examType = ''; // 선택된 시험 유형
 
     // JSON 데이터 불러오기
     fetch(jsonUrl)
@@ -166,39 +168,42 @@
         })
         .catch(error => console.error('Error fetching the question data:', error));
 
-    // 1종, 2종 선택에 따라 과목 3 이름 변경
-    function setExamType(type) {
-        examType = type;
-        const subject3Btn = document.getElementById('subject3-btn');
-        if (examType === '1종') {
-            subject3Btn.textContent = '과목 3-1: 수렵도구(제1종) 사용법';
-        } else {
-            subject3Btn.textContent = '과목 3-2: 수렵도구(제2종) 사용법';
-        }
+    // 타이머 설정
+    let timerDuration = 6000; // 100분 = 6000초
+    let timerInterval;
+    
+    function startTimer() {
+        const timerElement = document.getElementById('timer');
+        timerInterval = setInterval(() => {
+            const minutes = Math.floor(timerDuration / 60);
+            const seconds = timerDuration % 60;
+            timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            timerDuration--;
+            if (timerDuration < 0) {
+                clearInterval(timerInterval);
+                alert("시험 시간이 종료되었습니다.");
+                // 여기에 시험 종료 처리를 추가할 수 있습니다.
+            }
+        }, 1000);
     }
 
-    // 과목별로 문제를 로드하는 함수
-    function loadQuestions(subjectId) {
+    // 1종, 2종 선택에 따라 문제 로드
+    function setExamType(type) {
+        examType = type;
+        document.getElementById('exam-type-buttons').style.display = 'none'; // 선택 후 버튼 숨기기
+        loadQuestions();
+        startTimer(); // 타이머 시작
+    }
+
+    // 문제 로드 함수 (1종 또는 2종 선택 후)
+    function loadQuestions() {
         const questionContainer = document.getElementById('question-container');
         questionContainer.innerHTML = '';  // 기존 내용을 비우기
 
         let filteredQuestions = [];
-        if (subjectId === 1) {
-            filteredQuestions = allQuestions.filter(q => q.id >= 1 && q.id <= 611); // 과목 1 문제
-        } else if (subjectId === 2) {
-            filteredQuestions = allQuestions.filter(q => q.id >= 612 && q.id <= 1208); // 과목 2 문제
-        } else if (subjectId === 3) {
-            // 1종, 2종에 따라 다른 과목 3 로드
-            if (examType === '1종') {
-                filteredQuestions = allQuestions.filter(q => q.id >= 1209 && q.id <= 1639); // 과목 3-1 문제
-            } else {
-                filteredQuestions = allQuestions.filter(q => q.id >= 1640 && q.id <= 1800); // 과목 3-2 문제
-            }
-        } else if (subjectId === 5) {
-            filteredQuestions = allQuestions.filter(q => q.id >= 1801 && q.id <= 2000); // 과목 4 문제
-        }
+        filteredQuestions = allQuestions.filter(q => q.examType === examType); // 1종 또는 2종에 맞는 문제만 가져오기
 
-        // 선택된 과목의 문제를 표시
+        // 선택된 문제를 표시
         filteredQuestions.forEach((q, index) => {
             const questionBlock = document.createElement('div');
             questionBlock.className = 'question-block';
@@ -249,19 +254,3 @@
 
     // 페이지 맨 위로 스크롤하는 함수
     function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 페이지 맨 아래로 스크롤하는 함수
-    function scrollToBottom() {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
-
-    // 이전 화면으로 돌아가는 함수
-    function goBack() {
-        window.history.back();
-    }
-</script>
-
-</body>
-</html>
