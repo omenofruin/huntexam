@@ -112,7 +112,7 @@
 </div>
 
 <script>
-    const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
+    const jsonUrl = 'questions.json'; // JSON 파일 경로
     let allQuestions = [];
     let selectedExamType = '';
     const numQuestionsPerSubject = 20; // 각 과목에서 20문제씩
@@ -146,19 +146,13 @@
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
 
-                let imageHtml = '';
-                if (q.image) {
-                    imageHtml = `<div class="image-container"><img src="${q.image}" alt="문제 이미지"></div>`;
-                }
-
                 questionDiv.innerHTML = `
                     <h2>문제 ${q.id}: ${q.question}</h2>
-                    ${imageHtml}
                     <div class="options">
                         ${q.options.map((option, i) => `
                             <label>
                                 <input type="radio" name="question${q.id}" value="${i}"> 
-                                ${option.text ? option.text : option}
+                                ${option}
                             </label>
                         `).join('')}
                     </div>
