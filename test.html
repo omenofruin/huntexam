@@ -282,7 +282,7 @@
         let totalScore = 0;
         let subjectScores = [0, 0, 0, 0]; // 과목별 점수
         const totalQuestions = numQuestionsPerSubject * totalSubjects;
-
+    
         // 모든 문제를 선택했는지 확인
         questionBlocks.forEach((questionBlock, index) => {
             const questionId = `question${index + 1}`;
@@ -291,30 +291,30 @@
                 allSelected = false;
             }
         });
-
+    
         if (!allSelected) {
             alert("모든 문제를 선택해야 제출할 수 있습니다.");
             return;
         }
-
+    
         // 각 질문별 정답 확인
         questionBlocks.forEach((questionBlock, index) => {
             const questionId = `question${index + 1}`;
             const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
-
+    
             const correctAnswer = allQuestions[index].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
-
+    
             if (selectedOption && parseInt(selectedOption.value) === correctAnswer) {
                 const subjectIndex = Math.floor(index / numQuestionsPerSubject);
-                subjectScores[subjectIndex] += 2; // 각 문제는 2점
-                totalScore += 2;
+                subjectScores[subjectIndex] += 5; // 각 문제는 5점
+                totalScore += 5;
             }
         });
-
-        const averageScore = (totalScore / (numQuestionsPerSubject * totalSubjects)) * 100;
-        const passedSubjects = subjectScores.filter(score => score >= 40).length;
+    
+        const averageScore = (totalScore / (numQuestionsPerSubject * totalSubjects * 5)) * 100; // 평균 점수 계산
+        const passedSubjects = subjectScores.filter(score => score >= 40).length; // 각 과목별 40점 이상인지 확인
         const passedOverall = averageScore >= 60;
-
+    
         const scoreSection = document.getElementById('score-section');
         scoreSection.innerHTML = `
             과목별 점수: ${subjectScores.join(' / ')} <br>
@@ -325,11 +325,12 @@
         } else {
             scoreSection.innerHTML += `<div class="score-failed">불합격입니다.</div>`;
         }
-
+    
         // 제출 후 문제 화면 숨기기
         document.getElementById('question-container').innerHTML = '';
         document.querySelector('.submit-button').style.display = 'none';
     }
+
 
     // 타이머 함수 (100분 카운트다운)
     function startTimer(duration) {
