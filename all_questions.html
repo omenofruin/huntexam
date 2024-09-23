@@ -62,6 +62,25 @@
         .incorrect {
             color: red;
         }
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .nav-buttons button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav-buttons button:hover {
+            background-color: #636363;
+        }
         /* Fixed button style */
         .fixed-button-container {
             position: fixed;
@@ -82,19 +101,6 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         .fixed-button:hover {
-            background-color: #636363;
-        }
-        .scroll-button {
-            background-color: #000000;
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-        .scroll-button:hover {
             background-color: #636363;
         }
         /* 왼쪽 고정 버튼 */
@@ -121,8 +127,12 @@
 <body>
 
 <div class="container">
-    <h1>수렵면허 모든 문제 풀기</h1>
+    <h1>수렵면허 모의고사 문제 풀기</h1>
     <div id="question-container"></div>
+    <div class="nav-buttons">
+        <button id="prev-button" onclick="prevPage()" disabled>이전</button>
+        <button id="next-button" onclick="nextPage()">다음</button>
+    </div>
 </div>
 
 <!-- 왼쪽 고정 버튼 -->
@@ -133,17 +143,15 @@
 <!-- 오른쪽 고정 버튼 -->
 <div class="fixed-button-container">
     <button class="fixed-button" onclick="resetPage()">초기화</button>
-    <button class="scroll-button" onclick="scrollToTop()">맨 위로</button>
-    <button class="scroll-button" onclick="scrollToBottom()">맨 아래로</button>
 </div>
 
 <script>
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
-    let allQuestions = []; // 데이터를 전역 변수에 저장
-    const BATCH_SIZE = 100; // 한 번에 로드할 문제 수
-    let currentBatch = 0;  // 현재 로드된 배치 인덱스
+    let allQuestions = [];
+    const QUESTIONS_PER_PAGE = 200;  // 한 페이지당 문제 수
+    let currentPage = 0;  // 현재 페이지
 
-    // 데이터 fetch 및 첫 번째 배치 로드
+    // 데이터 fetch 및 첫 번째 페이지 로드
     fetch(jsonUrl)
         .then(response => {
             if (!response.ok) {
@@ -153,16 +161,16 @@
         })
         .then(data => {
             allQuestions = data;  // 데이터를 전역 변수에 저장
-            loadBatch(currentBatch);  // 첫 번째 배치 로드
-            currentBatch++;
+            loadPage(currentPage);  // 첫 번째 페이지 로드
         })
         .catch(error => console.error('Error fetching the question data:', error));
 
-    // 특정 배치 문제 로드 함수
-    function loadBatch(batchIndex) {
+    // 페이지 로드 함수
+    function loadPage(pageIndex) {
         const questionContainer = document.getElementById('question-container');
-        const startIndex = batchIndex * BATCH_SIZE;
-        const endIndex = Math.min(startIndex + BATCH_SIZE, allQuestions.length);
+        questionContainer.innerHTML = '';  // 기존 내용을 비우기
+        const startIndex = pageIndex * QUESTIONS_PER_PAGE;
+        const endIndex = Math.min(startIndex + QUESTIONS_PER_PAGE, allQuestions.length);
 
         for (let index = startIndex; index < endIndex; index++) {
             const q = allQuestions[index];
@@ -172,7 +180,6 @@
             const questionDiv = document.createElement('div');
             questionDiv.className = 'question';
 
-            // 이미지가 있으면 출력할 HTML 태그 생성
             let imageHtml = '';
             if (q.image) {
                 const images = Array.isArray(q.image) ? q.image : [q.image];
@@ -197,47 +204,41 @@
             questionBlock.appendChild(questionDiv);
             questionContainer.appendChild(questionBlock);
         }
+
+        // 이전/다음 버튼 활성화 상태 관리
+        document.getElementById('prev-button').disabled = pageIndex === 0;
+        document.getElementById('next-button').disabled = endIndex >= allQuestions.length;
     }
 
-    // 추가 문제 로드 (스크롤 이벤트를 통해 다음 배치 로드)
-    window.addEventListener('scroll', () => {
-        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    // 다음 페이지로 이동
+    function nextPage() {
+        currentPage++;
+        loadPage(currentPage);
+    }
 
-        if (scrollTop + clientHeight >= scrollHeight - 10) {
-            if (currentBatch * BATCH_SIZE < allQuestions.length) {
-                loadBatch(currentBatch);
-                currentBatch++;
-            }
-        }
-    });
+    // 이전 페이지로 이동
+    function prevPage() {
+        currentPage--;
+        loadPage(currentPage);
+    }
 
     // 정답 확인 함수 (단일 정답 처리)
     function checkAnswer(questionIndex, selectedOption) {
         const resultDiv = document.getElementById(`result${questionIndex}`);
-        const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 정답 확인
+        const correctAnswer = allQuestions[questionIndex].correctAnswer;
 
         if (selectedOption === correctAnswer) {
             resultDiv.textContent = "정답입니다!";
             resultDiv.className = "result correct";
         } else {
-            resultDiv.textContent = `오답입니다.`;
+            resultDiv.textContent = "오답입니다.";
             resultDiv.className = "result incorrect";
         }
     }
 
     // 페이지 초기화 함수
     function resetPage() {
-        location.reload();  // 페이지를 새로 고침합니다.
-    }
-
-    // 페이지 맨 위로 스크롤하는 함수
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 페이지 맨 아래로 스크롤하는 함수
-    function scrollToBottom() {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        location.reload();
     }
 
     // 이전 화면으로 돌아가는 함수
