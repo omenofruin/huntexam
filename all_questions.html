@@ -66,6 +66,7 @@
         .nav-buttons {
             display: flex;
             justify-content: center;
+            align-items: center;
             margin: 20px 0;
         }
         .nav-buttons button {
@@ -80,6 +81,19 @@
         }
         .nav-buttons button:hover {
             background-color: #636363;
+        }
+        .nav-buttons input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 80px;
+            text-align: center;
+        }
+        .nav-buttons button:disabled {
+            background-color: #999;
+            cursor: not-allowed;
         }
         /* Fixed button style */
         .fixed-button-container {
@@ -131,6 +145,8 @@
     <div id="question-container"></div>
     <div class="nav-buttons">
         <button id="prev-button" onclick="prevPage()" disabled>이전</button>
+        <input type="number" id="page-number" min="1" placeholder="페이지">
+        <button id="go-button" onclick="goToPage()">이동</button>
         <button id="next-button" onclick="nextPage()">다음</button>
     </div>
 </div>
@@ -220,6 +236,18 @@
     function prevPage() {
         currentPage--;
         loadPage(currentPage);
+    }
+
+    // 특정 페이지로 이동
+    function goToPage() {
+        const pageInput = document.getElementById('page-number').value;
+        const pageNumber = parseInt(pageInput) - 1; // 입력값은 1부터 시작하므로 1을 뺌
+        if (pageNumber >= 0 && pageNumber < Math.ceil(allQuestions.length / QUESTIONS_PER_PAGE)) {
+            currentPage = pageNumber;
+            loadPage(currentPage);
+        } else {
+            alert("잘못된 페이지 번호입니다.");
+        }
     }
 
     // 정답 확인 함수 (단일 정답 처리)
