@@ -284,20 +284,6 @@
         let subjectScores = [0, 0, 0, 0]; // 과목별 점수
         const totalQuestions = numQuestionsPerSubject * totalSubjects;
     
-        // 모든 문제를 선택했는지 확인
-        questionBlocks.forEach((questionBlock, index) => {
-            const questionId = `question${index + 1}`;
-            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
-            if (!selectedOption) {
-                allSelected = false;
-            }
-        });
-    
-        if (!allSelected) {
-            alert("모든 문제를 선택해야 제출할 수 있습니다.");
-            return;
-        }
-    
         // 각 질문별 정답 확인
         questionBlocks.forEach((questionBlock, index) => {
             const questionId = `question${index + 1}`;
