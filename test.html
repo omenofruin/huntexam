@@ -283,14 +283,26 @@
         let subjectScores = [0, 0, 0, 0]; // 과목별 점수
         const totalQuestions = numQuestionsPerSubject * totalSubjects;
     
+        // 모든 문제를 선택했는지 확인
+        questionBlocks.forEach((questionBlock, index) => {
+            const questionId = `question${index + 1}`;
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            if (!selectedOption) {
+                allSelected = false;
+            }
+        });
+    
+        if (!allSelected) {
+            alert("모든 문제를 선택해야 제출할 수 있습니다.");
+            return;
+        }
+    
         // 각 질문별 정답 확인
         questionBlocks.forEach((questionBlock, index) => {
             const questionId = `question${index + 1}`;
             const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
     
-            // 문제 분류에 따른 정답 확인
-            const questionIndex = Math.floor(index / numQuestionsPerSubject);
-            const correctAnswer = allQuestions[questionIndex].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
+            const correctAnswer = allQuestions[index].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
     
             if (selectedOption && parseInt(selectedOption.value) === correctAnswer) {
                 const subjectIndex = Math.floor(index / numQuestionsPerSubject);
@@ -299,7 +311,7 @@
             }
         });
     
-        // 점수 계산 로직 수정: 배점과 과목별 점수를 400점 기준으로 계산
+        // 과목별 점수 표시와 합격 여부 계산
         const averageScore = (totalScore / (numQuestionsPerSubject * totalSubjects * 5)) * 100; // 평균 점수 계산
         const passedSubjects = subjectScores.filter(score => score >= 40).length; // 각 과목별 40점 이상인지 확인
         const passedOverall = averageScore >= 60; // 전체 평균 60점 이상이면 합격
@@ -319,8 +331,6 @@
         document.getElementById('question-container').innerHTML = '';
         document.querySelector('.submit-button').style.display = 'none';
     }
-
-
 
     // 타이머 함수 (100분 카운트다운)
     function startTimer(duration) {
