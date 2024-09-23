@@ -99,6 +99,58 @@
         .button-group-2 a:hover {
             background-color: #636363;
         }
+
+        /* 팝업 스타일 */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .popup-header {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .popup-body {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: left;
+        }
+
+        .popup-close {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup-close:hover {
+            background-color: #636363;
+        }
+
+        /* 팝업 뒤에 반투명 배경 */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
@@ -115,8 +167,37 @@
         </div>
         <a href="https://github.com/omenofruin/huntexam" target="_blank">GITHUB</a>
         <a href="https://local.gosi.go.kr/klid/main/main.do" target="_blank">수렵면허 원서접수</a>
+        <a href="#" onclick="openPopup()">수렵면허 절차</a>
     </div>
 </div>
+
+<!-- 팝업 내용 -->
+<div class="popup-overlay" id="popupOverlay"></div>
+<div class="popup" id="popup">
+    <div class="popup-header">수렵면허 절차</div>
+    <div class="popup-body">
+        <p>수렵면허를 받기 위해서는 다음 절차를 따라야 합니다:</p>
+        <ul>
+            <li>1. 수렵면허 시험 원서 접수</li>
+            <li>2. 필기시험 응시</li>
+            <li>3. 실기시험 응시</li>
+            <li>4. 면허 발급 신청</li>
+        </ul>
+    </div>
+    <button class="popup-close" onclick="closePopup()">닫기</button>
+</div>
+
+<script>
+    function openPopup() {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popupOverlay').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popupOverlay').style.display = 'none';
+    }
+</script>
 
 </body>
 </html>
