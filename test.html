@@ -169,7 +169,6 @@
 
 <!-- 오른쪽 고정 버튼 -->
 <div class="fixed-button-container">
-    <button class="fixed-button" onclick="resetPage()">초기화</button>
     <button class="scroll-button" onclick="scrollToTop()">맨 위로</button>
     <button class="scroll-button" onclick="scrollToBottom()">맨 아래로</button>
 </div>
@@ -336,10 +335,6 @@
             }
             time--;
         }, 1000);
-    }
-    // 페이지 초기화 함수
-    function resetPage() {
-        location.reload();  // 페이지를 새로 고침합니다.
     }
 
     // 페이지 맨 위로 스크롤하는 함수
