@@ -140,8 +140,10 @@
 <script>
     const jsonUrl = 'https://raw.githubusercontent.com/omenofruin/huntexam/main/questions.json';
     let allQuestions = []; // 데이터를 전역 변수에 저장
+    const BATCH_SIZE = 100; // 한 번에 로드할 문제 수
+    let currentBatch = 0;  // 현재 로드된 배치 인덱스
 
-    // 데이터 fetch 및 로드
+    // 데이터 fetch 및 첫 번째 배치 로드
     fetch(jsonUrl)
         .then(response => {
             if (!response.ok) {
@@ -151,42 +153,63 @@
         })
         .then(data => {
             allQuestions = data;  // 데이터를 전역 변수에 저장
-            const questionContainer = document.getElementById('question-container');
-
-            data.forEach((q, index) => {
-                const questionBlock = document.createElement('div');
-                questionBlock.className = 'question-block';
-
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-
-                // 이미지가 있으면 출력할 HTML 태그 생성
-                let imageHtml = '';
-                if (q.image) {
-                    const images = Array.isArray(q.image) ? q.image : [q.image];  // 이미지가 배열인지 확인
-                    imageHtml = `<div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
-                }
-
-                questionDiv.innerHTML = `
-                    <h2>문제 ${index + 1}: ${q.question}</h2>
-                    ${imageHtml}
-                    <div class="options">
-                        ${q.options.map((option, i) => `
-                            <label>
-                                <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})">
-                                ${typeof option === 'object' ? option.text : option}
-                                ${typeof option === 'object' && option.image ? `<img src="${option.image}" alt="선택지 이미지">` : ''}
-                            </label>
-                        `).join('')}
-                    </div>
-                    <div id="result${index}" class="result"></div>
-                `;
-
-                questionBlock.appendChild(questionDiv);
-                questionContainer.appendChild(questionBlock);
-            });
+            loadBatch(currentBatch);  // 첫 번째 배치 로드
+            currentBatch++;
         })
         .catch(error => console.error('Error fetching the question data:', error));
+
+    // 특정 배치 문제 로드 함수
+    function loadBatch(batchIndex) {
+        const questionContainer = document.getElementById('question-container');
+        const startIndex = batchIndex * BATCH_SIZE;
+        const endIndex = Math.min(startIndex + BATCH_SIZE, allQuestions.length);
+
+        for (let index = startIndex; index < endIndex; index++) {
+            const q = allQuestions[index];
+            const questionBlock = document.createElement('div');
+            questionBlock.className = 'question-block';
+
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+
+            // 이미지가 있으면 출력할 HTML 태그 생성
+            let imageHtml = '';
+            if (q.image) {
+                const images = Array.isArray(q.image) ? q.image : [q.image];
+                imageHtml = `<div class="image-container">${images.map(imageSrc => `<img src="${imageSrc}" alt="문제 이미지">`).join('')}</div>`;
+            }
+
+            questionDiv.innerHTML = `
+                <h2>문제 ${index + 1}: ${q.question}</h2>
+                ${imageHtml}
+                <div class="options">
+                    ${q.options.map((option, i) => `
+                        <label>
+                            <input type="radio" name="question${q.id}" value="${i}" onclick="checkAnswer(${index}, ${i})">
+                            ${typeof option === 'object' ? option.text : option}
+                            ${typeof option === 'object' && option.image ? `<img src="${option.image}" alt="선택지 이미지">` : ''}
+                        </label>
+                    `).join('')}
+                </div>
+                <div id="result${index}" class="result"></div>
+            `;
+
+            questionBlock.appendChild(questionDiv);
+            questionContainer.appendChild(questionBlock);
+        }
+    }
+
+    // 추가 문제 로드 (스크롤 이벤트를 통해 다음 배치 로드)
+    window.addEventListener('scroll', () => {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+        if (scrollTop + clientHeight >= scrollHeight - 10) {
+            if (currentBatch * BATCH_SIZE < allQuestions.length) {
+                loadBatch(currentBatch);
+                currentBatch++;
+            }
+        }
+    });
 
     // 정답 확인 함수 (단일 정답 처리)
     function checkAnswer(questionIndex, selectedOption) {
