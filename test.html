@@ -217,20 +217,22 @@
         const questionContainer = document.getElementById('question-container');
         questionContainer.innerHTML = '';  // 기존 내용을 비우기
         let questionNumber = 1;
-
+    
         for (let subjectId = 1; subjectId <= totalSubjects; subjectId++) {
             const subjectQuestions = getRandomQuestionsBySubject(subjectId, numQuestionsPerSubject);
             subjectQuestions.forEach((q, index) => {
                 const questionBlock = document.createElement('div');
                 questionBlock.className = 'question-block';
+                questionBlock.setAttribute('data-id', q.id);  // 문제 ID 추가
+    
                 const questionDiv = document.createElement('div');
                 questionDiv.className = 'question';
-
+    
                 let imageHtml = '';
                 if (q.image) {
                     imageHtml = `<div class="image-container"><img src="${q.image}" alt="문제 이미지"></div>`;
                 }
-
+    
                 questionDiv.innerHTML = `
                     <h2>문제 ${questionNumber}: ${q.question}</h2>
                     ${imageHtml}
@@ -282,16 +284,35 @@
         let subjectScores = [0, 0, 0, 0]; // 과목별 점수
         const totalQuestions = numQuestionsPerSubject * totalSubjects;
     
+        // 모든 문제를 선택했는지 확인
+        questionBlocks.forEach((questionBlock, index) => {
+            const questionId = `question${index + 1}`;
+            const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+            if (!selectedOption) {
+                allSelected = false;
+            }
+        });
+    
+        if (!allSelected) {
+            alert("모든 문제를 선택해야 제출할 수 있습니다.");
+            return;
+        }
+    
         // 각 질문별 정답 확인
         questionBlocks.forEach((questionBlock, index) => {
             const questionId = `question${index + 1}`;
             const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
     
-            // 과목별 문제를 구분하여 정답을 확인
-            let subjectIndex = Math.floor(index / numQuestionsPerSubject);
-            let correctAnswer = allQuestions[index].correctAnswer;  // 올바른 정답을 JSON에서 가져옴
-    
+            // 각 질문의 ID를 추적하여 JSON에서 해당 문제를 가져옴
+            const questionIdValue = questionBlock.getAttribute('data-id');  // 문제 ID 추적
+            const correctQuestion = allQuestions.find(q => q.id == questionIdValue); // JSON에서 해당 ID 문제 찾기
+            
+            // 정답 확인
+            const correctAnswer = correctQuestion.correctAnswer;
+            
+            // 사용자가 선택한 값과 정답 비교
             if (selectedOption && parseInt(selectedOption.value) === correctAnswer) {
+                const subjectIndex = Math.floor(index / numQuestionsPerSubject); // 과목 구분
                 subjectScores[subjectIndex] += 5; // 각 문제는 5점 배점
                 totalScore += 5;
             }
@@ -317,7 +338,6 @@
         document.getElementById('question-container').innerHTML = '';
         document.querySelector('.submit-button').style.display = 'none';
     }
-
 
     // 타이머 함수 (100분 카운트다운)
     function startTimer(duration) {
