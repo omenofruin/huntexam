@@ -29,6 +29,8 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            /* 푸터(저작권) 공간을 위해 상대 포지션 추가 */
+            position: relative; 
         }
 
         h1 {
@@ -151,6 +153,25 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+
+        /* 추가된 저작권 푸터 스타일 */
+        .footer-copyright {
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: #888;
+            line-height: 1.4;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .footer-copyright a {
+            color: #666;
+            text-decoration: none;
+            border-bottom: 1px dashed #ccc;
+        }
+        .footer-copyright a:hover {
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -159,7 +180,7 @@
     <img class="logo" src="https://github.com/omenofruin/huntexam/blob/main/image/logo.png?raw=true" alt="Huntexam Logo">
     <h1 class="font">대한민국 수렵면허 모의고사</h1>
     
-    <div class="button-group" class="font">
+    <div class="button-group font">
         <a href="http://huntexam.kro.kr/test">실전 모의고사</a>
         <div class="button-group-2">
             <a href="http://huntexam.kro.kr/all_questions">모든 문제 풀기</a>
@@ -169,13 +190,18 @@
         <a href="https://local.gosi.go.kr/klid/main/main.do" target="_blank">수렵면허 원서접수</a>
         <a href="#" onclick="openPopup()">수렵면허 절차</a>
     </div>
+
+    <div class="footer-copyright font">
+        본 모의고사는 <strong>경기도청</strong>에서 개방한 <strong>'수렵면허시험 문제은행(공공누리 제3유형)'</strong> 자료를 원본 그대로 활용하여 제작되었습니다.<br>
+        해당 자료는 <a href="https://www.gg.go.kr/" target="_blank">경기도청 홈페이지(www.gg.go.kr)</a>에서 무료로 다운로드하실 수 있습니다.
+    </div>
+
 </div>
 
-<!-- 팝업 내용 -->
 <div class="popup-overlay" id="popupOverlay"></div>
 <div class="popup" id="popup">
-    <div class="popup-header">수렵면허 절차</div>
-    <div class="popup-body">
+    <div class="popup-header font">수렵면허 절차</div>
+    <div class="popup-body font">
         <p>수렵면허를 받기 위해서는 다음 절차를 따라야 합니다:</p>
         <ul>
             <li>1. 수렵면허 필기시험 공고 및 원서 접수: 지방자치단체 인터넷원서 접수 사이트에서 공고 확인 후 원서 접수. 접수시 시험 관련 안내를 받을 수 있습니다.</li>
@@ -191,7 +217,9 @@
             <li>6. 수렵면허 발급</li>
         </ul>
     </div>
-    <button class="popup-close" onclick="closePopup()">닫기</button>
+    <div style="text-align: center;">
+        <button class="popup-close font" onclick="closePopup()">닫기</button>
+    </div>
 </div>
 
 <script>
