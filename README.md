@@ -14,4 +14,8 @@
 ### 과목별 문제 풀기
 각 과목 별 문제들을 순서대로 만나볼 수 있습니다. 각 문제 마다 즉시 채점합니다
 
+<br>
+
 <img width="105" height="32" alt="img_opentype03" src="https://github.com/user-attachments/assets/57a48234-d18d-489f-954f-205dad51bdad" />
+
+본 모의고사는 각 시청 사이트에서 다운로드 받을 수 있는 수렵면허 문제은행을 활용하여 제작되었습니다. 무료로 이용할 수 있으며, 변경되지 않았습니다.
